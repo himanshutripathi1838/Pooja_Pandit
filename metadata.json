@@ -1,0 +1,6 @@
+{
+  "name": "Puja of Pandit",
+  "description": "An elegant platform for booking authentic Vedic rituals, ceremonies, and astrology consultations performed by certified Pandits.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

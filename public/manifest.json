@@ -1,0 +1,17 @@
+{
+  "name": "Pooja Pandit - Vedic Rites & Astrology",
+  "short_name": "Pooja Pandit",
+  "description": "Book authentic Vedic rituals, havans, and astrology consultations online. Performed with absolute scriptural purity by Pandit Dheeraj Tripathi.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbf9f8",
+  "theme_color": "#a04100",
+  "icons": [
+    {
+      "src": "/assets/images/pooja_pandit_logo_1783261742775.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Page Not Found | Pandit Dheeraj Tripathi</title>
+    <script type="text/javascript">
+      // Redirect to index.html with the original pathname
+      var pathName = window.location.pathname;
+      if (pathName && pathName !== '/') {
+        window.location.replace('/' + '?p=' + encodeURIComponent(pathName.substring(1)));
+      } else {
+        window.location.replace('/');
+      }
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to the sacred path...</p>
+  </body>
+</html>

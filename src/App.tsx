@@ -13,8 +13,9 @@ import CalendarModal from './components/CalendarModal';
 
 import { SERVICES as INITIAL_SERVICES, INITIAL_BOOKINGS } from './data';
 import { Booking, Service } from './types';
-import { Language } from './translations';
+import { Language, t } from './translations';
 import { apiGetBookings, apiCreateBooking, apiUpdateBookingStatus, apiDeleteBooking } from './api';
+import SEO from './components/SEO';
 
 export default function App() {
   const [language, setLanguage] = useState<Language>('en');
@@ -22,12 +23,26 @@ export default function App() {
   // Initialize state based on current URL path
   const getInitialTab = () => {
     const path = window.location.pathname.toLowerCase();
-    if (path.startsWith('/admin')) return 'admin';
-    if (path.startsWith('/services')) return 'services';
-    if (path.startsWith('/gallery')) return 'gallery';
-    if (path.startsWith('/about')) return 'about';
-    if (path.startsWith('/book')) return 'book';
-    return 'home';
+    
+    // Check if redirect query parameter from a 404 page exists
+    const searchParams = new URLSearchParams(window.location.search);
+    const queryPath = (searchParams.get('p') || '').toLowerCase();
+    
+    const resolveFromPath = (p: string) => {
+      const cleanPath = p.replace(/^\//, '');
+      if (cleanPath.startsWith('admin')) return 'admin';
+      if (cleanPath.startsWith('services')) return 'services';
+      if (cleanPath.startsWith('gallery')) return 'gallery';
+      if (cleanPath.startsWith('about')) return 'about';
+      if (cleanPath.startsWith('book')) return 'book';
+      return null;
+    };
+
+    const resolved = resolveFromPath(path) || resolveFromPath(queryPath);
+    if (resolved) return resolved;
+
+    if (path === '/' || path === '' || queryPath === 'home') return 'home';
+    return '404';
   };
 
   const [activeTab, setActiveTab] = useState(getInitialTab());
@@ -86,7 +101,9 @@ export default function App() {
   useEffect(() => {
     const handlePopState = () => {
       const path = window.location.pathname.toLowerCase();
-      if (path.startsWith('/admin')) {
+      if (path === '/' || path === '') {
+        setActiveTab('home');
+      } else if (path.startsWith('/admin')) {
         setActiveTab('admin');
       } else if (path.startsWith('/services')) {
         setActiveTab('services');
@@ -94,13 +111,46 @@ export default function App() {
         setActiveTab('about');
       } else if (path.startsWith('/book')) {
         setActiveTab('book');
+      } else if (path.startsWith('/gallery')) {
+        setActiveTab('gallery');
       } else {
-        setActiveTab('home');
+        setActiveTab('404');
       }
     };
 
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // Google Analytics & Google Search Console verification injections
+  useEffect(() => {
+    const gaId = import.meta.env.VITE_GA_ID;
+    if (gaId) {
+      const script1 = document.createElement('script');
+      script1.async = true;
+      script1.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+      document.head.appendChild(script1);
+
+      const script2 = document.createElement('script');
+      script2.text = `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${gaId}');
+      `;
+      document.head.appendChild(script2);
+    }
+
+    const gscVerification = import.meta.env.VITE_GSC_VERIFICATION;
+    if (gscVerification) {
+      let element = document.querySelector('meta[name="google-site-verification"]');
+      if (!element) {
+        element = document.createElement('meta');
+        element.setAttribute('name', 'google-site-verification');
+        document.head.appendChild(element);
+      }
+      element.setAttribute('content', gscVerification);
+    }
   }, []);
 
   // Booking handlers
@@ -164,6 +214,13 @@ export default function App() {
   if (activeTab === 'admin') {
     return (
       <div className="min-h-screen bg-[#fbf9f8] text-[#1b1c1c] font-sans flex flex-col justify-between selection:bg-[#ffdbcc] selection:text-[#a04100]">
+        <SEO 
+          title={t('seo.title.admin', language)}
+          description={t('seo.desc.admin', language)}
+          canonicalPath="/admin"
+          language={language}
+          pageNameForBreadcrumb="Admin"
+        />
         <div className="flex-grow py-12">
           {isAdminAuthenticated ? (
             <AdminDashboardView 
@@ -191,6 +248,20 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#fbf9f8] text-[#1b1c1c] font-sans flex flex-col justify-between selection:bg-[#ffdbcc] selection:text-[#a04100]">
+      <SEO 
+        title={t(`seo.title.${activeTab}`, language)}
+        description={t(`seo.desc.${activeTab}`, language)}
+        canonicalPath={activeTab === 'home' ? '/' : `/${activeTab}`}
+        language={language}
+        pageNameForBreadcrumb={
+          activeTab === 'home' ? undefined :
+          activeTab === 'services' ? 'Services' :
+          activeTab === 'about' ? 'About Pandit Ji' :
+          activeTab === 'gallery' ? 'Gallery' :
+          activeTab === 'book' ? 'Book' :
+          activeTab === '404' ? '404 Page Not Found' : undefined
+        }
+      />
       
       {/* Dynamic Header */}
       <Header 
@@ -239,6 +310,29 @@ export default function App() {
             onNavigateToDashboard={() => navigateToTab('admin')} 
             services={services}
           />
+        )}
+
+        {activeTab === '404' && (
+          <div className="max-w-2xl mx-auto text-center py-20 px-6 space-y-6">
+            <h1 className="font-serif text-6xl md:text-8xl font-bold text-[#a04100] animate-pulse">404</h1>
+            <h2 className="font-serif text-2xl md:text-3xl font-semibold text-[#1b1c1c]">
+              {language === 'sa' ? 'मार्गभ्रष्टः - पृष्ठं न लब्धम्' : language === 'te' ? 'పేజీ కనుగొనబడలేదు' : 'Spiritual Path Not Found'}
+            </h2>
+            <p className="text-[#5a4136] text-sm md:text-base leading-relaxed max-w-md mx-auto">
+              {language === 'sa' 
+                ? 'अनुरोधितः मार्गः अस्मिन् संसारे न लब्धः। कृपया मुख्यपृष्ठं गत्वा शुभाय सङ्कल्पं कुरु।' 
+                : 'The page you are looking for has taken a spiritual detour or does not exist. Let us return you to the sacred path.'}
+            </p>
+            <div className="pt-4">
+              <a 
+                href="/" 
+                onClick={(e) => { e.preventDefault(); navigateToTab('home'); }}
+                className="inline-block px-8 py-3.5 bg-[#a04100] text-white rounded-full font-bold text-xs hover:scale-105 transition-all shadow-md cursor-pointer"
+              >
+                {language === 'sa' ? 'मुख्यपृष्ठम्' : 'Return to Home'}
+              </a>
+            </div>
+          </div>
         )}
       </main>
 

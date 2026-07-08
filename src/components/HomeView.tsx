@@ -91,6 +91,7 @@ export default function HomeView({ language, onNavigateToServices, onNavigateToB
           <img 
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmYLqhX8h9-vT7Zc9JSvzjDERkAed3M0LSuQzeI2ZSP5EGT8D_HsaMePSiQaLbVrqr8aSkyiVrWdf7EvFSs-kL4NVcX4X-IoICaArTUubT0lxAcqTqpXrAZrt4GFt7isGgiC3t13M8iE766pLLOh6ousxPAP2q1rpcUjshR7M-A9zRiUpypDsCnbYvvT4KxL-BAMyJe-A_k7OI8mBFh_XRNTP3KcXFB-n7X39SKQ6SprPPEn0M_u2-zs4igDADfqSnwI2wRofQ9OUv" 
             alt="Vedic Temple Sanctuary" 
+            fetchPriority="high"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-linear-to-r from-[#fbf9f8] via-[#fbf9f8]/95 to-transparent"></div>
@@ -210,6 +211,7 @@ export default function HomeView({ language, onNavigateToServices, onNavigateToB
             <img 
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH-GarctjYpeKQ6HZsUMT5ahnK6jRRZSEEg2ATnvTe7zsHw-hg-9gvN2mA8Eu7MrJoblTuShPB-ZCNLcutfFzbG_vjxscVyapyMNAuH0TCaE1zFrzGGxHNua3X7r7n9R1XdFUYhgrM7M8zMhIf0UBeGkeoHXR-tZvUbxVDJ_5YKQnV4f8V33NnVGvUIJ2JWAT6NAWshg_5aTvOypeU_dTaOIedL_TQBen64A0Av-MUzb5DmNXFqZ0D6R3e7A_Qbj7cRCcCL6nJnY8i" 
               alt="Satyanarayan Katha Setup" 
+              loading="lazy"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/35 to-transparent flex flex-col justify-end p-8">
@@ -237,6 +239,7 @@ export default function HomeView({ language, onNavigateToServices, onNavigateToB
               <img 
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHtqVNIfYQaa0_t5490K6yMNliGj0XRO-9pwo_HkWLmSN3lw6j7OoKFY2qhLlhqcsNGRehSwjzoDKWFPceXPrS98gj-NIUjl2JjO1Z6v2-Yt1UzX_RNKTATa11aVH17T1zdXk8T7BWKrZiXm9s3D7mlWZ6rY0ewlwfrCIksBzmf0mgO4qGB58qvsOh5TikpJJd2AgAkRTibCaRrKshDONOy9DARKzwTrfWEevaGMpgpUGTjjOuaQNnGGun4_vGP8xEc2OxvBOIuB7b" 
                 alt="Rudrabhishek Ceremony" 
+                loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <span className="absolute top-4 right-4 bg-[#a04100] text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">

@@ -54,28 +54,31 @@ export default function Footer({ language, setActiveTab }: FooterProps) {
           </h4>
           <ul className="space-y-3 text-[13px] text-[#5a4136]/80">
             <li>
-              <button 
-                onClick={() => { setActiveTab('services'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} 
-                className="hover:text-[#a04100] transition-colors text-left"
+              <a 
+                href="/services"
+                onClick={(e) => { e.preventDefault(); setActiveTab('services'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} 
+                className="hover:text-[#a04100] transition-colors block text-left"
               >
                 {t('footer.link.services', language)}
-              </button>
+              </a>
             </li>
             <li>
-              <button 
-                onClick={() => { setActiveTab('about'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} 
-                className="hover:text-[#a04100] transition-colors text-left"
+              <a 
+                href="/about"
+                onClick={(e) => { e.preventDefault(); setActiveTab('about'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} 
+                className="hover:text-[#a04100] transition-colors block text-left"
               >
                 {t('footer.link.about', language)}
-              </button>
+              </a>
             </li>
             <li>
-              <button 
-                onClick={() => { setActiveTab('book'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} 
-                className="hover:text-[#a04100] transition-colors text-left"
+              <a 
+                href="/book"
+                onClick={(e) => { e.preventDefault(); setActiveTab('book'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} 
+                className="hover:text-[#a04100] transition-colors block text-left"
               >
                 {t('footer.link.book', language)}
-              </button>
+              </a>
             </li>
             <li>
               <a href="#register" className="hover:text-[#a04100] transition-colors block">

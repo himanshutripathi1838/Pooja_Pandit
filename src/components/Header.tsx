@@ -35,9 +35,11 @@ export default function Header({ activeTab, setActiveTab, language, setLanguage 
             <Menu className="w-6 h-6" />
           </button>
           
-          <div 
+          <a 
+            href="/" 
             className="flex items-center gap-3 cursor-pointer" 
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
               setActiveTab('home');
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
@@ -51,7 +53,7 @@ export default function Header({ activeTab, setActiveTab, language, setLanguage 
             <span className="text-[#a04100] font-bold text-lg md:text-xl tracking-wider uppercase flex items-center gap-1.5">
               Pooja Pandit
             </span>
-          </div>
+          </a>
         </div>
 
         {/* Center Navigation (Desktop) */}
@@ -59,9 +61,11 @@ export default function Header({ activeTab, setActiveTab, language, setLanguage 
           {navItems.map((item) => {
             const isActive = activeTab === item.id;
             return (
-              <button
+              <a
                 key={item.id}
-                onClick={() => {
+                href={item.id === 'home' ? '/' : `/${item.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
                   setActiveTab(item.id);
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
@@ -75,7 +79,7 @@ export default function Header({ activeTab, setActiveTab, language, setLanguage 
                 {isActive && (
                   <span className="absolute bottom-0 left-0 w-full h-[2.5px] bg-[#a04100] rounded-full" />
                 )}
-              </button>
+              </a>
             );
           })}
         </nav>
@@ -194,9 +198,11 @@ export default function Header({ activeTab, setActiveTab, language, setLanguage 
               {navItems.map((item) => {
                 const isActive = activeTab === item.id;
                 return (
-                  <button
+                  <a
                     key={item.id}
-                    onClick={() => {
+                    href={item.id === 'home' ? '/' : `/${item.id}`}
+                    onClick={(e) => {
+                      e.preventDefault();
                       setActiveTab(item.id);
                       setMobileMenuOpen(false);
                       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -208,7 +214,7 @@ export default function Header({ activeTab, setActiveTab, language, setLanguage 
                     }`}
                   >
                     <span>{t(item.labelKey, language)}</span>
-                  </button>
+                  </a>
                 );
               })}
             </nav>

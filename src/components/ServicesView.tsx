@@ -106,6 +106,7 @@ export default function ServicesView({ language, onSelectServiceToBook, services
                   <img 
                     src={service.imageUrl} 
                     alt={service.name} 
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <span className="absolute top-4 right-4 z-20 bg-[#a04100]/90 text-white px-3.5 py-1 rounded-full text-[9px] font-bold uppercase tracking-widest">

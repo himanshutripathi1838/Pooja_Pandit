@@ -57,6 +57,7 @@ export default function AboutView({ language }: AboutViewProps) {
               <img 
                 src={acharyaPhoto} 
                 alt="Pandit Dheeraj Tripathi" 
+                loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>

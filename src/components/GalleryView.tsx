@@ -159,6 +159,7 @@ export default function GalleryView({ language }: GalleryViewProps) {
                 <img 
                   src={item.url} 
                   alt={language === 'en' ? item.title : item.titleHi} 
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 

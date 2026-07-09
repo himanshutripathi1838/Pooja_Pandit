@@ -375,50 +375,6 @@ export default function HomeView({ language, onNavigateToServices, onNavigateToB
         </div>
       </section>
 
-      
-      {/* Cities We Serve Section */}
-      <section className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-12 space-y-2">
-          <span className="text-xs font-bold text-[#a04100] tracking-wider uppercase block">
-            {language === 'sa' ? 'व्याप्तानि नगराणि' : 'Our Coverage'}
-          </span>
-          <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#1b1c1c] dark:text-[#fbf9f8]">
-            {language === 'sa' ? 'मुख्यनगरेषु सेवाः' : 'Cities We Serve'}
-          </h2>
-          <p className="text-sm text-[#5a4136] dark:text-[#fbf9f8]/70 max-w-lg mx-auto">
-            {language === 'sa' 
-              ? 'भारतस्य प्रमुखनगरेषु शास्त्रोक्तपुरोहितसेवाः उपलब्धाः सन्ति।' 
-              : 'Book our certified and verified Vedic Pandits for religious ceremonies in major Indian metropolitan cities.'}
-          </p>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {[
-            { en: 'Varanasi (Kashi)', sa: 'काशी / वाराणसी', local: 'उत्तर प्रदेश' },
-            { en: 'Delhi NCR', sa: 'दिल्ली-एनसीआर', local: 'दिल्ली' },
-            { en: 'Mumbai', sa: 'मुम्बई', local: 'महाराष्ट्र' },
-            { en: 'Bangalore', sa: 'बङ्गलोर', local: 'कर्नाटक' },
-            { en: 'Pune', sa: 'पुणे', local: 'महाराष्ट्र' },
-            { en: 'Hyderabad', sa: 'हैदराबाद', local: 'तेलंगाना' },
-            { en: 'Chennai', sa: 'चेन्नई', local: 'तमिलनाडु' },
-            { en: 'Kolkata', sa: 'कोलकाता', local: 'पश्चिम बंगाल' }
-          ].map((city, idx) => (
-            <div 
-              key={idx}
-              className="bg-white dark:bg-[#141211] border border-[#e2bfb0]/25 dark:border-[#e2bfb0]/10 p-6 rounded-2xl flex flex-col items-center text-center space-y-3 hover:scale-105 transition-all shadow-xs"
-            >
-              <div className="w-10 h-10 bg-[#ffdbcc]/40 dark:bg-[#ffdbcc]/10 text-[#a04100] dark:text-[#ff9d66] rounded-full flex items-center justify-center">
-                <MapPin className="w-4 h-4" />
-              </div>
-              <div>
-                <h4 className="font-serif font-bold text-sm text-[#1b1c1c] dark:text-[#fbf9f8]">{language === 'sa' ? city.sa : city.en}</h4>
-                <p className="text-[10px] uppercase font-bold text-[#5a4136]/50 dark:text-[#fbf9f8]/40 tracking-wider mt-0.5">{city.local}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Blog Preview Section */}
       <section className="py-20 bg-[#f6f3f2]/40 dark:bg-[#0c0b0a]/30">
         <div className="max-w-7xl mx-auto px-6">

@@ -22,9 +22,6 @@ export default function Header({ activeTab, setActiveTab, language, setLanguage,
     { id: 'gallery', labelKey: 'nav.gallery' },
     { id: 'about', labelKey: 'nav.about' },
     { id: 'book', labelKey: 'nav.book' },
-    { id: 'faq', labelKey: 'nav.faq' },
-    { id: 'blog', labelKey: 'nav.blog' },
-    { id: 'contact', labelKey: 'nav.contact' },
   ];
 
   return (

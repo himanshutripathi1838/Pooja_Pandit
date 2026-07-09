@@ -248,7 +248,7 @@ export default function App() {
 
   if (activeTab === 'admin') {
     return (
-      <div className="min-h-screen bg-[#fbf9f8] text-[#1b1c1c] font-sans flex flex-col justify-between selection:bg-[#ffdbcc] selection:text-[#a04100]">
+      <div className="min-h-screen bg-[#fbf9f8] dark:bg-[#0c0b0a] text-[#1b1c1c] dark:text-[#fbf9f8] font-sans flex flex-col justify-between selection:bg-[#ffdbcc] selection:text-[#a04100] transition-colors duration-300">
         <SEO 
           title={t('seo.title.admin', language)}
           description={t('seo.desc.admin', language)}
@@ -282,7 +282,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-[#fbf9f8] text-[#1b1c1c] font-sans flex flex-col justify-between selection:bg-[#ffdbcc] selection:text-[#a04100]">
+    <div className="min-h-screen bg-[#fbf9f8] dark:bg-[#0c0b0a] text-[#1b1c1c] dark:text-[#fbf9f8] font-sans flex flex-col justify-between selection:bg-[#ffdbcc] selection:text-[#a04100] transition-colors duration-300">
       <SEO 
         title={t(`seo.title.${activeTab}`, language)}
         description={t(`seo.desc.${activeTab}`, language)}

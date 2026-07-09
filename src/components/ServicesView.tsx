@@ -14,6 +14,7 @@ type CategoryType = 'All' | 'Ceremony' | 'Havan' | 'Online Puja' | 'Astrology';
 
 export default function ServicesView({ language, onSelectServiceToBook, services }: ServicesViewProps) {
   const [selectedCategory, setSelectedCategory] = useState<CategoryType>('All');
+  const [searchQuery, setSearchQuery] = useState('');
   const [activeDetailService, setActiveDetailService] = useState<Service | null>(null);
   
   // Custom Puja Modal State
@@ -30,9 +31,14 @@ export default function ServicesView({ language, onSelectServiceToBook, services
     { id: 'Astrology', labelKey: 'services.filter.astrology' },
   ];
 
-  const filteredServices = selectedCategory === 'All'
-    ? services
-    : services.filter(s => s.category === selectedCategory);
+  const filteredServices = services.filter(s => {
+    const matchesCategory = selectedCategory === 'All' || s.category === selectedCategory;
+    const matchesSearch = s.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                          t(s.name, language).toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          s.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          (s.details && s.details.some(d => d.toLowerCase().includes(searchQuery.toLowerCase())));
+    return matchesCategory && matchesSearch;
+  });
 
   const handleCustomSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,39 +57,53 @@ export default function ServicesView({ language, onSelectServiceToBook, services
     <div className="max-w-7xl mx-auto px-6 space-y-16">
       {/* Intro Header */}
       <section className="text-center md:text-left space-y-4">
-        <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#f0eded] text-[#a04100] border border-[#e2bfb0]/30 animate-pulse">
+        <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-[#f0eded] dark:bg-[#f0eded]/10 text-[#a04100] dark:text-[#ff9d66] border border-[#e2bfb0]/30 dark:border-[#e2bfb0]/15 animate-pulse">
           <Sparkles className="w-3.5 h-3.5 mr-2" />
           <span className="text-[10px] uppercase font-bold tracking-widest">
             {t('hero.tagline', language)}
           </span>
         </div>
-        <h1 className="font-serif text-3xl md:text-5xl font-bold text-[#a04100]">
+        <h1 className="font-serif text-3xl md:text-5xl font-bold text-[#a04100] dark:text-[#ff9d66]">
           {t('bento.tagline', language)}
         </h1>
-        <p className="text-[#5a4136] text-sm md:text-base max-w-2xl leading-relaxed">
+        <p className="text-[#5a4136] dark:text-[#fbf9f8]/70 text-sm md:text-base max-w-2xl leading-relaxed">
           {t('hero.subtitle', language)}
         </p>
       </section>
 
-      {/* Category Filters */}
-      <div className="flex flex-wrap items-center gap-3 overflow-x-auto pb-4 border-b border-[#e2bfb0]/15 scrollbar-thin">
-        <Filter className="w-4 h-4 text-[#a04100] mr-2 shrink-0 hidden md:block" />
-        {categories.map((cat) => {
-          const isActive = selectedCategory === cat.id;
-          return (
-            <button
-              key={cat.id}
-              onClick={() => setSelectedCategory(cat.id)}
-              className={`px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider transition-all whitespace-nowrap cursor-pointer ${
-                isActive
-                  ? 'bg-[#a04100] text-white shadow-md shadow-[#a04100]/20 scale-105'
-                  : 'bg-white text-[#5a4136] border border-[#e2bfb0]/30 hover:border-[#a04100] hover:text-[#a04100]'
-              }`}
-            >
-              {t(cat.labelKey, language)}
-            </button>
-          );
-        })}
+      {/* Category Filters & Search Bar */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-4 border-b border-[#e2bfb0]/15 dark:border-[#e2bfb0]/10">
+        <div className="flex flex-wrap items-center gap-3 overflow-x-auto scrollbar-none shrink-0">
+          <Filter className="w-4 h-4 text-[#a04100] mr-2 shrink-0 hidden md:block" />
+          {categories.map((cat) => {
+            const isActive = selectedCategory === cat.id;
+            return (
+              <button
+                key={cat.id}
+                onClick={() => setSelectedCategory(cat.id)}
+                className={`px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider transition-all whitespace-nowrap cursor-pointer ${
+                  isActive
+                    ? 'bg-[#a04100] text-white shadow-md shadow-[#a04100]/20 scale-105'
+                    : 'bg-white dark:bg-[#141211] text-[#5a4136] dark:text-[#fbf9f8]/80 border border-[#e2bfb0]/30 dark:border-[#e2bfb0]/15 hover:border-[#a04100] hover:text-[#a04100] dark:hover:text-[#ff9d66]'
+                }`}
+              >
+                {t(cat.labelKey, language)}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Search Input */}
+        <div className="relative w-full md:max-w-xs shrink-0">
+          <input
+            type="text"
+            placeholder={language === 'sa' ? 'पूजा अन्वेषणम्...' : language === 'te' ? 'సేవలను శోధించండి...' : 'Search pujas & rituals...'}
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full pl-4 pr-10 py-2.5 bg-white dark:bg-[#141211] border border-[#e2bfb0]/30 dark:border-[#e2bfb0]/15 rounded-full text-xs text-[#1b1c1c] dark:text-[#fbf9f8] placeholder-[#5a4136]/40 dark:placeholder-[#fbf9f8]/30 focus:outline-hidden focus:ring-1 focus:ring-[#a04100]"
+          />
+          <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[#a04100]/60 dark:text-[#ff9d66]/60">🔍</span>
+        </div>
       </div>
 
       {/* Grid of Services */}

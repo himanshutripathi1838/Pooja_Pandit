@@ -95,7 +95,7 @@ export default function GalleryView({ language }: GalleryViewProps) {
         <motion.h1 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="font-serif text-3xl md:text-4xl font-bold text-[#1b1c1c] tracking-wide"
+          className="font-serif text-3xl md:text-4xl font-bold text-[#1b1c1c] dark:text-[#fbf9f8] tracking-wide"
         >
           {t('gallery.title', language)}
         </motion.h1>
@@ -103,7 +103,7 @@ export default function GalleryView({ language }: GalleryViewProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-sm md:text-base text-[#5a4136]/80 leading-relaxed"
+          className="text-sm md:text-base text-[#5a4136]/80 dark:text-[#fbf9f8]/70 leading-relaxed"
         >
           {t('gallery.subtitle', language)}
         </motion.p>
@@ -111,13 +111,13 @@ export default function GalleryView({ language }: GalleryViewProps) {
 
       {/* Tabs Selector Toggle */}
       <div className="flex justify-center mb-12">
-        <div className="bg-[#ffdbcc]/40 border border-[#e2bfb0]/30 p-1 rounded-2xl flex gap-1 shadow-sm">
+        <div className="bg-[#ffdbcc]/40 dark:bg-[#ffdbcc]/5 border border-[#e2bfb0]/30 dark:border-[#e2bfb0]/15 p-1 rounded-2xl flex gap-1 shadow-sm">
           <button
             onClick={() => setActiveTab('photo')}
             className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs md:text-sm font-semibold transition-all duration-300 cursor-pointer ${
               activeTab === 'photo'
                 ? 'bg-[#a04100] text-white shadow-md shadow-[#a04100]/25'
-                : 'text-[#5a4136]/80 hover:text-[#a04100]'
+                : 'text-[#5a4136]/80 dark:text-[#fbf9f8]/80 hover:text-[#a04100] dark:hover:text-[#ff9d66]'
             }`}
           >
             <ImageIcon className="w-4 h-4" />
@@ -128,7 +128,7 @@ export default function GalleryView({ language }: GalleryViewProps) {
             className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs md:text-sm font-semibold transition-all duration-300 cursor-pointer ${
               activeTab === 'video'
                 ? 'bg-[#a04100] text-white shadow-md shadow-[#a04100]/25'
-                : 'text-[#5a4136]/80 hover:text-[#a04100]'
+                : 'text-[#5a4136]/80 dark:text-[#fbf9f8]/80 hover:text-[#a04100] dark:hover:text-[#ff9d66]'
             }`}
           >
             <Video className="w-4 h-4" />
@@ -152,7 +152,7 @@ export default function GalleryView({ language }: GalleryViewProps) {
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.4, delay: idx * 0.05 }}
               onClick={() => setSelectedItem(item)}
-              className="group relative bg-white border border-[#e2bfb0]/20 rounded-2xl overflow-hidden shadow-md shadow-[#a04100]/3 hover:shadow-xl hover:shadow-[#a04100]/8 transition-all duration-300 cursor-pointer flex flex-col justify-between"
+              className="group relative bg-white dark:bg-[#141211] border border-[#e2bfb0]/20 dark:border-[#e2bfb0]/10 rounded-2xl overflow-hidden shadow-md shadow-[#a04100]/3 hover:shadow-xl hover:shadow-[#a04100]/8 transition-all duration-300 cursor-pointer flex flex-col justify-between"
             >
               {/* Media Thumbnail Container */}
               <div className="relative aspect-4/3 overflow-hidden bg-[#ffdbcc]/10">
@@ -181,8 +181,8 @@ export default function GalleryView({ language }: GalleryViewProps) {
               </div>
 
               {/* Title info */}
-              <div className="p-5 border-t border-[#e2bfb0]/10 bg-white">
-                <h3 className="font-serif text-[15px] font-bold text-[#1b1c1c] leading-snug group-hover:text-[#a04100] transition-colors line-clamp-2">
+              <div className="p-5 border-t border-[#e2bfb0]/10 bg-white dark:bg-[#141211]">
+                <h3 className="font-serif text-[15px] font-bold text-[#1b1c1c] dark:text-[#fbf9f8] leading-snug group-hover:text-[#a04100] transition-colors line-clamp-2">
                   {language === 'en' ? item.title : item.titleHi}
                 </h3>
               </div>

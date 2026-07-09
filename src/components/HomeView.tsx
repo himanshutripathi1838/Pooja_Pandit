@@ -10,6 +10,7 @@ import {
   ChevronDown, 
   Star, 
   MapPin, 
+  BookOpen, 
   Flame, 
   Video, 
   ChevronRight,
@@ -85,7 +86,7 @@ export default function HomeView({ language, onNavigateToServices, onNavigateToB
   return (
     <div className="space-y-24">
       {/* Hero Section */}
-      <section className="relative min-h-165 flex items-center overflow-hidden px-6 md:px-12 py-16 bg-[#fbf9f8]">
+      <section className="relative min-h-165 flex items-center overflow-hidden px-6 md:px-12 py-16 bg-[#fbf9f8] dark:bg-[#0c0b0a]">
         {/* Background image & gradient overlay */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -94,7 +95,7 @@ export default function HomeView({ language, onNavigateToServices, onNavigateToB
             fetchPriority="high"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-linear-to-r from-[#fbf9f8] via-[#fbf9f8]/95 to-transparent"></div>
+          <div className="absolute inset-0 bg-linear-to-r from-[#fbf9f8] via-[#fbf9f8]/95 to-transparent dark:from-[#0c0b0a] dark:via-[#0c0b0a]/95"></div>
         </div>
 
         {/* Hero Content */}
@@ -103,7 +104,7 @@ export default function HomeView({ language, onNavigateToServices, onNavigateToB
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-block px-4 py-1.5 bg-[#ffdbcc]/70 text-[#a04100] font-semibold text-xs uppercase tracking-widest rounded-full"
+            className="inline-block px-4 py-1.5 bg-[#ffdbcc]/70 dark:bg-[#ffdbcc]/10 text-[#a04100] dark:text-[#ff9d66] font-semibold text-xs uppercase tracking-widest rounded-full"
           >
             {t('hero.tagline', language)}
           </motion.span>
@@ -188,7 +189,7 @@ export default function HomeView({ language, onNavigateToServices, onNavigateToB
             <span className="text-xs font-bold text-[#a04100] tracking-wider uppercase block">
               {t('bento.tagline', language)}
             </span>
-            <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#1b1c1c]">
+            <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#1b1c1c] dark:text-[#fbf9f8]">
               {t('bento.title', language)}
             </h2>
             <p className="text-sm text-[#5a4136]">
@@ -248,10 +249,10 @@ export default function HomeView({ language, onNavigateToServices, onNavigateToB
             </div>
             <div className="p-6 flex flex-col justify-between flex-grow">
               <div>
-                <h3 className="font-serif text-lg font-bold text-[#1b1c1c] mb-2">
+                <h3 className="font-serif text-lg font-bold text-[#1b1c1c] dark:text-[#fbf9f8] mb-2">
                   {t('bento.rudrabhishek.title', language)}
                 </h3>
-                <p className="text-[#5a4136] text-xs line-clamp-3">
+                <p className="text-[#5a4136] dark:text-[#fbf9f8]/70 text-xs line-clamp-3">
                   {t('bento.rudrabhishek.desc', language)}
                 </p>
               </div>
@@ -270,10 +271,10 @@ export default function HomeView({ language, onNavigateToServices, onNavigateToB
             <div className="w-12 h-12 rounded-full bg-[#ffdbcc]/40 flex items-center justify-center text-[#a04100]">
               <Home className="w-5 h-5" />
             </div>
-            <h4 className="font-serif font-bold text-[17px] text-[#1b1c1c]">
+            <h4 className="font-serif font-bold text-[17px] text-[#1b1c1c] dark:text-[#fbf9f8]">
               {t('bento.griha.title', language)}
             </h4>
-            <p className="text-[#5a4136] text-xs leading-relaxed max-w-55">
+            <p className="text-[#5a4136] dark:text-[#fbf9f8]/75 text-xs leading-relaxed max-w-55">
               {t('bento.griha.desc', language)}
             </p>
           </div>
@@ -314,7 +315,7 @@ export default function HomeView({ language, onNavigateToServices, onNavigateToB
             <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#1b1c1c]">
               {t('calendar.title', language)}
             </h2>
-            <p className="text-sm text-[#5a4136] max-w-lg mx-auto">
+            <p className="text-sm text-[#5a4136] dark:text-[#fbf9f8]/70 max-w-lg mx-auto">
               {t('calendar.desc', language)}
             </p>
           </div>
@@ -374,9 +375,137 @@ export default function HomeView({ language, onNavigateToServices, onNavigateToB
         </div>
       </section>
 
+      
+      {/* Cities We Serve Section */}
+      <section className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-12 space-y-2">
+          <span className="text-xs font-bold text-[#a04100] tracking-wider uppercase block">
+            {language === 'sa' ? 'व्याप्तानि नगराणि' : 'Our Coverage'}
+          </span>
+          <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#1b1c1c] dark:text-[#fbf9f8]">
+            {language === 'sa' ? 'मुख्यनगरेषु सेवाः' : 'Cities We Serve'}
+          </h2>
+          <p className="text-sm text-[#5a4136] dark:text-[#fbf9f8]/70 max-w-lg mx-auto">
+            {language === 'sa' 
+              ? 'भारतस्य प्रमुखनगरेषु शास्त्रोक्तपुरोहितसेवाः उपलब्धाः सन्ति।' 
+              : 'Book our certified and verified Vedic Pandits for religious ceremonies in major Indian metropolitan cities.'}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {[
+            { en: 'Varanasi (Kashi)', sa: 'काशी / वाराणसी', local: 'उत्तर प्रदेश' },
+            { en: 'Delhi NCR', sa: 'दिल्ली-एनसीआर', local: 'दिल्ली' },
+            { en: 'Mumbai', sa: 'मुम्बई', local: 'महाराष्ट्र' },
+            { en: 'Bangalore', sa: 'बङ्गलोर', local: 'कर्नाटक' },
+            { en: 'Pune', sa: 'पुणे', local: 'महाराष्ट्र' },
+            { en: 'Hyderabad', sa: 'हैदराबाद', local: 'तेलंगाना' },
+            { en: 'Chennai', sa: 'चेन्नई', local: 'तमिलनाडु' },
+            { en: 'Kolkata', sa: 'कोलकाता', local: 'पश्चिम बंगाल' }
+          ].map((city, idx) => (
+            <div 
+              key={idx}
+              className="bg-white dark:bg-[#141211] border border-[#e2bfb0]/25 dark:border-[#e2bfb0]/10 p-6 rounded-2xl flex flex-col items-center text-center space-y-3 hover:scale-105 transition-all shadow-xs"
+            >
+              <div className="w-10 h-10 bg-[#ffdbcc]/40 dark:bg-[#ffdbcc]/10 text-[#a04100] dark:text-[#ff9d66] rounded-full flex items-center justify-center">
+                <MapPin className="w-4 h-4" />
+              </div>
+              <div>
+                <h4 className="font-serif font-bold text-sm text-[#1b1c1c] dark:text-[#fbf9f8]">{language === 'sa' ? city.sa : city.en}</h4>
+                <p className="text-[10px] uppercase font-bold text-[#5a4136]/50 dark:text-[#fbf9f8]/40 tracking-wider mt-0.5">{city.local}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Blog Preview Section */}
+      <section className="py-20 bg-[#f6f3f2]/40 dark:bg-[#0c0b0a]/30">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div className="space-y-2 text-center md:text-left">
+              <span className="text-xs font-bold text-[#a04100] tracking-wider uppercase block">
+                {language === 'sa' ? 'ज्ञानगङ्गा' : 'Vedic Wisdom'}
+              </span>
+              <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#1b1c1c] dark:text-[#fbf9f8]">
+                {language === 'sa' ? 'शास्त्रचर्चा ज्ञानमञ्जरी च' : 'Latest Spiritual Blog Posts'}
+              </h2>
+            </div>
+            <button 
+              onClick={() => {
+                window.history.pushState({ tab: 'blog' }, '', '/blog');
+                window.dispatchEvent(new PopStateEvent('popstate'));
+              }}
+              className="text-[#a04100] dark:text-[#ff9d66] hover:text-[#a04100]/80 text-xs font-bold flex items-center gap-1.5 justify-center md:justify-start cursor-pointer transition-all hover:gap-2 shrink-0"
+            >
+              <span>{language === 'sa' ? 'सर्वं पठन्तु' : 'View All Articles'}</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'The Spiritual Significance of Griha Pravesh Puja',
+                titleHi: 'गृह प्रवेश पूजा का आध्यात्मिक और वैज्ञानिक महत्व',
+                desc: 'Understand why cleansing a new home with sacred Vedic mantras, Gau Puja, and Vastu Havan is essential for family health and prosperity.',
+                descHi: 'जानिए क्यों नए घर को वैदिक मंत्रों, गौ पूजा और वास्तु हवन से शुद्ध करना परिवार की खुशहाली और स्वास्थ्य के लिए अनिवार्य है।',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBH-GarctjYpeKQ6HZsUMT5ahnK6jRRZSEEg2ATnvTe7zsHw-hg-9gvN2mA8Eu7MrJoblTuShPB-ZCNLcutfFzbG_vjxscVyapyMNAuH0TCaE1zFrzGGxHNua3X7r7n9R1XdFUYhgrM7M8zMhIf0UBeGkeoHXR-tZvUbxVDJ_5YKQnV4f8V33NnVGvUIJ2JWAT6NAWshg_5aTvOypeU_dTaOIedL_TQBen64A0Av-MUzb5DmNXFqZ0D6R3e7A_Qbj7cRCcCL6nJnY8i'
+              },
+              {
+                title: 'Why Perform Rudrabhishek in the Month of Shravana?',
+                titleHi: 'सावन के पवित्र महीने में रुद्राभिषेक करने के लाभ',
+                desc: 'Learn about the cosmic energies active during Shravana and how performing Shiva Rudrabhishek with milk, honey, and cane juice helps astrological balancing.',
+                descHi: 'श्रावण मास में सक्रिय ब्रह्मांडीय ऊर्जाओं और शिव रुद्राभिषेक से कुंडली के ग्रहों को शांत करने की विधि के बारे में जानें।',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBXVp6nH85YURUHr5R27KRMSfhXPnAEMgBjG4cUs7f6LbIbVbIy3Ygh4yHXjlVbmKKrMz5eVgySE652yCwVV7DWo2Ba06dNezPDr6fN4Zp1KsPR4mHLd8MOSZILU3AUSBTCEmOoH9OxBJ526XzSJOd1prkUsEO0v9muepzfg4O9fNy72P1reZJjFu-IdEpk2uL4Bgaqrwu2uxwlBGAqzib5M2mY01LIFeXKTg81idVjG-PLoUYhFJn2Cnnc3TQkAHwvtztHkBY-Yh8h'
+              },
+              {
+                title: 'Astrological & Spiritual Benefits of Satyanarayan Puja',
+                titleHi: 'श्री सत्यनारायण व्रत कथा के ज्योतिषीय और आध्यात्मिक लाभ',
+                desc: 'The complete guide to performing Satyanarayan katha on Purnima (full moon) days to resolve business disputes, marital delay, and family stress.',
+                descHi: 'व्यापार में लाभ, वैवाहिक बाधाओं को दूर करने और मानसिक शांति के लिए पूर्णिमा पर सत्यनारायण कथा कराने की विधि का संपूर्ण गाइड।',
+                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDjGEflm6WAoB3z3mtBZAuIuhDiv9geJ0a7QhjrUsYlWVZ9eLLbZXLMdogfy_33ue3UVppAJan2SEfkUZ20Ltz9CIJBvkZ8-goqZJQd7KL9ELcxv4IqDRsaLeSakVPStUeIY7bVoREZsG2WCv-l_XdvAaJipnxOrw2KLG-fIAVYTC4pDFdJJ8uUlB_MZYm1_r0z2ca32xoAy3lEDR2Bny_HP33FZMTs4WWhtA-ZT2QPwKj1cEI-YRv4aB4o9GjN1gXfdcnp_6F6Ujh5'
+              }
+            ].map((post, idx) => (
+              <div 
+                key={idx}
+                className="bg-white dark:bg-[#141211] border border-[#e2bfb0]/25 dark:border-[#e2bfb0]/10 rounded-2xl overflow-hidden shadow-xs flex flex-col justify-between"
+              >
+                <div>
+                  <div className="h-44 overflow-hidden relative bg-[#ffdbcc]/10">
+                    <img 
+                      src={post.image} 
+                      alt={language === 'en' ? post.title : post.titleHi} 
+                      loading="lazy"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6 space-y-2">
+                    <h3 className="font-serif font-bold text-sm text-[#1b1c1c] dark:text-[#fbf9f8] line-clamp-2 leading-snug">{language === 'en' ? post.title : post.titleHi}</h3>
+                    <p className="text-[11px] text-[#5a4136] dark:text-[#fbf9f8]/70 line-clamp-3 leading-relaxed">{language === 'en' ? post.desc : post.descHi}</p>
+                  </div>
+                </div>
+                <div className="p-6 pt-0">
+                  <button 
+                    onClick={() => {
+                      window.history.pushState({ tab: 'blog' }, '', '/blog');
+                      window.dispatchEvent(new PopStateEvent('popstate'));
+                    }}
+                    className="text-[#a04100] dark:text-[#ff9d66] hover:text-[#a04100]/80 text-[11px] font-bold flex items-center gap-1 cursor-pointer"
+                  >
+                    <span>{language === 'sa' ? 'पठन्तु' : 'Read Article'}</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Divine Experiences Shared (Testimonials) */}
       <section className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16 space-y-2">
+        <div className="text-center mb-16 space-y-2 dark:text-[#fbf9f8]">
           <span className="text-xs font-bold text-[#a04100] tracking-wider uppercase block">
             {t('testimonials.tagline', language)}
           </span>
@@ -391,7 +520,7 @@ export default function HomeView({ language, onNavigateToServices, onNavigateToB
             return (
               <div 
                 key={test.id} 
-                className="bg-white/80 border border-[#e2bfb0]/20 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
+                className="bg-white/80 dark:bg-[#141211]/80 border border-[#e2bfb0]/25 dark:border-[#e2bfb0]/10 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
               >
                 <div>
                   <div className="flex gap-1 text-amber-500 mb-5">
@@ -421,7 +550,7 @@ export default function HomeView({ language, onNavigateToServices, onNavigateToB
 
       {/* Frequently Asked Questions */}
       <section className="max-w-3xl mx-auto px-6">
-        <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#1b1c1c] text-center mb-12">
+        <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#1b1c1c] dark:text-[#fbf9f8] text-center mb-12">
           {t('faq.title', language)}
         </h2>
 
@@ -431,18 +560,18 @@ export default function HomeView({ language, onNavigateToServices, onNavigateToB
             return (
               <div 
                 key={idx} 
-                className="bg-white rounded-xl border border-[#e2bfb0]/20 overflow-hidden shadow-sm"
+                className="bg-white dark:bg-[#141211] rounded-xl border border-[#e2bfb0]/25 dark:border-[#e2bfb0]/10 overflow-hidden shadow-sm"
               >
                 <button
                   onClick={() => toggleFaq(idx)}
-                  className="w-full flex justify-between items-center p-5 text-left font-serif font-semibold text-xs md:text-[14px] text-[#1b1c1c] hover:bg-[#ffdbcc]/10 transition-colors cursor-pointer"
+                  className="w-full flex justify-between items-center p-5 text-left font-serif font-semibold text-xs md:text-[14px] text-[#1b1c1c] dark:text-[#fbf9f8] hover:bg-[#ffdbcc]/10 dark:hover:bg-[#ffdbcc]/5 transition-colors cursor-pointer"
                 >
                   <span>{t(faq.question, language)}</span>
                   <ChevronDown className={`w-4 h-4 text-[#a04100] transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
                 </button>
                 
                 {isOpen && (
-                  <div className="p-5 pt-0 text-xs md:text-[13px] text-[#5a4136] leading-relaxed border-t border-[#e2bfb0]/10 bg-[#fbf9f8]">
+                  <div className="p-5 pt-0 text-xs md:text-[13px] text-[#5a4136] dark:text-[#fbf9f8]/80 leading-relaxed border-t border-[#e2bfb0]/10 dark:border-[#e2bfb0]/5 bg-[#fbf9f8] dark:bg-[#0c0b0a]/30">
                     {t(faq.answer, language)}
                   </div>
                 )}

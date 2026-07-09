@@ -11,14 +11,34 @@ import GalleryView from './components/GalleryView';
 import { Phone, Calendar } from 'lucide-react';
 import CalendarModal from './components/CalendarModal';
 
-import { SERVICES as INITIAL_SERVICES, INITIAL_BOOKINGS } from './data';
+import { SERVICES as INITIAL_SERVICES, INITIAL_BOOKINGS, FAQS } from './data';
 import { Booking, Service } from './types';
 import { Language, t } from './translations';
 import { apiGetBookings, apiCreateBooking, apiUpdateBookingStatus, apiDeleteBooking } from './api';
 import SEO from './components/SEO';
+import FAQView from './components/FAQView';
+import BlogView from './components/BlogView';
+import ContactView from './components/ContactView';
+import LegalView from './components/LegalView';
 
 export default function App() {
   const [language, setLanguage] = useState<Language>('en');
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    const stored = localStorage.getItem('theme');
+    return (stored === 'light' || stored === 'dark') ? stored : 'light';
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === 'dark') {
+      root.classList.add('dark');
+      document.body.style.backgroundColor = '#0c0b0a';
+    } else {
+      root.classList.remove('dark');
+      document.body.style.backgroundColor = '#fbf9f8';
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   // Initialize state based on current URL path
   const getInitialTab = () => {
@@ -35,6 +55,11 @@ export default function App() {
       if (cleanPath.startsWith('gallery')) return 'gallery';
       if (cleanPath.startsWith('about')) return 'about';
       if (cleanPath.startsWith('book')) return 'book';
+      if (cleanPath.startsWith('faq')) return 'faq';
+      if (cleanPath.startsWith('blog')) return 'blog';
+      if (cleanPath.startsWith('contact')) return 'contact';
+      if (cleanPath.startsWith('privacy')) return 'privacy';
+      if (cleanPath.startsWith('terms')) return 'terms';
       return null;
     };
 
@@ -113,6 +138,16 @@ export default function App() {
         setActiveTab('book');
       } else if (path.startsWith('/gallery')) {
         setActiveTab('gallery');
+      } else if (path.startsWith('/faq')) {
+        setActiveTab('faq');
+      } else if (path.startsWith('/blog')) {
+        setActiveTab('blog');
+      } else if (path.startsWith('/contact')) {
+        setActiveTab('contact');
+      } else if (path.startsWith('/privacy')) {
+        setActiveTab('privacy');
+      } else if (path.startsWith('/terms')) {
+        setActiveTab('terms');
       } else {
         setActiveTab('404');
       }
@@ -252,6 +287,7 @@ export default function App() {
         title={t(`seo.title.${activeTab}`, language)}
         description={t(`seo.desc.${activeTab}`, language)}
         canonicalPath={activeTab === 'home' ? '/' : `/${activeTab}`}
+        faqItems={activeTab === 'faq' ? FAQS : undefined}
         language={language}
         pageNameForBreadcrumb={
           activeTab === 'home' ? undefined :
@@ -259,6 +295,11 @@ export default function App() {
           activeTab === 'about' ? 'About Pandit Ji' :
           activeTab === 'gallery' ? 'Gallery' :
           activeTab === 'book' ? 'Book' :
+          activeTab === 'faq' ? 'FAQs' :
+          activeTab === 'blog' ? 'Blog' :
+          activeTab === 'contact' ? 'Contact' :
+          activeTab === 'privacy' ? 'Privacy Policy' :
+          activeTab === 'terms' ? 'Terms & Conditions' :
           activeTab === '404' ? '404 Page Not Found' : undefined
         }
       />
@@ -269,6 +310,8 @@ export default function App() {
         setLanguage={setLanguage} 
         activeTab={activeTab} 
         setActiveTab={navigateToTab} 
+        theme={theme}
+        setTheme={setTheme}
       />
 
       {/* Main Screen Router */}
@@ -309,6 +352,31 @@ export default function App() {
             onBookingCreated={handleBookingCreated} 
             onNavigateToDashboard={() => navigateToTab('admin')} 
             services={services}
+          />
+        )}
+
+        {activeTab === 'faq' && (
+          <FAQView 
+            language={language} 
+          />
+        )}
+
+        {activeTab === 'blog' && (
+          <BlogView 
+            language={language} 
+          />
+        )}
+
+        {activeTab === 'contact' && (
+          <ContactView 
+            language={language} 
+          />
+        )}
+
+        {(activeTab === 'privacy' || activeTab === 'terms') && (
+          <LegalView 
+            language={language} 
+            view={activeTab as 'privacy' | 'terms'}
           />
         )}
 

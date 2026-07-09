@@ -1,6 +1,11 @@
 import { useEffect } from 'react';
 import { Language } from '../translations';
 
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
 interface SEOProps {
   title: string;
   description: string;
@@ -10,6 +15,7 @@ interface SEOProps {
   ogType?: 'website' | 'article' | 'profile';
   language?: Language;
   pageNameForBreadcrumb?: string;
+  faqItems?: FAQItem[];
 }
 
 export default function SEO({
@@ -20,7 +26,8 @@ export default function SEO({
   ogImage = 'https://pujapandit.tech/assets/images/pooja_pandit_logo_1783261742775.jpg',
   ogType = 'website',
   language = 'en',
-  pageNameForBreadcrumb
+  pageNameForBreadcrumb,
+  faqItems
 }: SEOProps) {
   
   useEffect(() => {
@@ -121,7 +128,59 @@ export default function SEO({
     }
     businessScript.text = JSON.stringify(localBusinessSchema);
 
-    // 8. Dynamic Breadcrumb Schema
+    // 8. Organization Schema
+    const organizationSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      'name': 'PujaPandit.tech',
+      'url': 'https://pujapandit.tech',
+      'logo': 'https://pujapandit.tech/assets/images/pooja_pandit_logo_1783261742775.jpg',
+      'sameAs': [
+        'https://facebook.com/pujapandittech',
+        'https://instagram.com/pujapandittech'
+      ]
+    };
+
+    let orgScript = document.getElementById('json-ld-org') as HTMLScriptElement;
+    if (!orgScript) {
+      orgScript = document.createElement('script');
+      orgScript.id = 'json-ld-org';
+      orgScript.type = 'application/ld+json';
+      document.head.appendChild(orgScript);
+    }
+    orgScript.text = JSON.stringify(organizationSchema);
+
+    // 9. FAQPage Schema
+    if (faqItems && faqItems.length > 0) {
+      const faqSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        'mainEntity': faqItems.map(item => ({
+          '@type': 'Question',
+          'name': item.question,
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': item.answer
+          }
+        }))
+      };
+
+      let faqScript = document.getElementById('json-ld-faq') as HTMLScriptElement;
+      if (!faqScript) {
+        faqScript = document.createElement('script');
+        faqScript.id = 'json-ld-faq';
+        faqScript.type = 'application/ld+json';
+        document.head.appendChild(faqScript);
+      }
+      faqScript.text = JSON.stringify(faqSchema);
+    } else {
+      const existingFaq = document.getElementById('json-ld-faq');
+      if (existingFaq) {
+        existingFaq.remove();
+      }
+    }
+
+    // 10. Dynamic Breadcrumb Schema
     if (pageNameForBreadcrumb && canonicalPath && canonicalPath !== '/') {
       const breadcrumbSchema = {
         '@context': 'https://schema.org',
@@ -160,13 +219,16 @@ export default function SEO({
 
     // Cleanup functions when component unmounts
     return () => {
-      // Keep general tags but remove specific breadcrumb
       const existingBreadcrumb = document.getElementById('json-ld-breadcrumb');
       if (existingBreadcrumb) {
         existingBreadcrumb.remove();
       }
+      const existingFaq = document.getElementById('json-ld-faq');
+      if (existingFaq) {
+        existingFaq.remove();
+      }
     };
-  }, [title, description, keywords, canonicalPath, ogImage, ogType, language, pageNameForBreadcrumb]);
+  }, [title, description, keywords, canonicalPath, ogImage, ogType, language, pageNameForBreadcrumb, faqItems]);
 
   return null;
 }

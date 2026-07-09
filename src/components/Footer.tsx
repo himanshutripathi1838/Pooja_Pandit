@@ -95,12 +95,20 @@ export default function Footer({ language, setActiveTab }: FooterProps) {
           </h4>
           <ul className="space-y-3 text-[13px] text-[#5a4136]/80">
             <li>
-              <a href="#privacy" className="hover:text-[#a04100] transition-colors block">
+              <a 
+                href="/privacy" 
+                onClick={(e) => { e.preventDefault(); setActiveTab('privacy'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                className="hover:text-[#a04100] transition-colors block"
+              >
                 {t('footer.link.privacy', language)}
               </a>
             </li>
             <li>
-              <a href="#terms" className="hover:text-[#a04100] transition-colors block">
+              <a 
+                href="/terms" 
+                onClick={(e) => { e.preventDefault(); setActiveTab('terms'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                className="hover:text-[#a04100] transition-colors block"
+              >
                 {t('footer.link.terms', language)}
               </a>
             </li>

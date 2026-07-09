@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Clock, Users, ArrowRight, Sparkles, Filter, Info, X, Check } from 'lucide-react';
+import { Clock, Users, ArrowRight, Sparkles, Filter, Info, X, Check, Star } from 'lucide-react';
 import { Service } from '../types';
 import { Language, t } from '../translations';
 
@@ -16,6 +16,8 @@ export default function ServicesView({ language, onSelectServiceToBook, services
   const [selectedCategory, setSelectedCategory] = useState<CategoryType>('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [activeDetailService, setActiveDetailService] = useState<Service | null>(null);
+  const [serviceRating, setServiceRating] = useState(0);
+  const [serviceRated, setServiceRated] = useState(false);
   
   // Custom Puja Modal State
   const [customPujaModalOpen, setCustomPujaModalOpen] = useState(false);
@@ -262,7 +264,43 @@ export default function ServicesView({ language, onSelectServiceToBook, services
                   </ul>
                 </div>
 
-                <div className="flex justify-between items-center bg-[#f6f3f2] p-4 rounded-xl">
+                {/* Rate this Service section */}
+                <div className="space-y-3 pt-4 border-t border-[#e2bfb0]/20 dark:border-[#e2bfb0]/10">
+                  <h4 className="text-xs font-bold text-[#a04100] dark:text-[#ff9d66] uppercase tracking-widest">
+                    {language === 'sa' ? 'पूजा मूल्यांकनम्' : 'Rate this Puja / रेटिंग दें'}
+                  </h4>
+                  {serviceRated ? (
+                    <p className="text-xs text-green-600 dark:text-green-400 font-semibold">
+                      {language === 'sa' ? 'धन्यवादः! भवतः मूल्यांकनं सुरक्षितम्।' : 'Thank you for your feedback!'}
+                    </p>
+                  ) : (
+                    <div className="flex items-center gap-3">
+                      <div className="flex gap-1.5">
+                        {[1, 2, 3, 4, 5].map((starVal) => (
+                          <button
+                            key={starVal}
+                            type="button"
+                            onClick={() => {
+                              setServiceRating(starVal);
+                              setServiceRated(true);
+                              setTimeout(() => setServiceRated(false), 3000);
+                            }}
+                            className="cursor-pointer transition-transform active:scale-90"
+                          >
+                            <Star 
+                              className={'w-5 h-5 ' + (starVal <= serviceRating ? 'fill-amber-500 text-amber-500' : 'text-gray-300 dark:text-zinc-700')}
+                            />
+                          </button>
+                        ))}
+                      </div>
+                      <span className="text-[10px] text-zinc-500 dark:text-zinc-400">
+                        {serviceRating > 0 ? serviceRating + ' Stars' : 'Tap to rate'}
+                      </span>
+                    </div>
+                  )}
+                </div>
+
+                <div className="flex justify-between items-center bg-[#f6f3f2] dark:bg-[#0c0b0a]/30 p-4 rounded-xl">
                   <div>
                     <span className="text-[10px] text-[#5a4136]/60 font-semibold uppercase block">
                       {t('services.card.dakshina', language)}

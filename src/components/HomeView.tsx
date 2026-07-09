@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { 
   Sparkles, 
   Calendar, 
@@ -17,7 +17,8 @@ import {
   ChevronLeft,
   Sun,
   Moon,
-  Home
+  Home,
+  X
 } from 'lucide-react';
 import { SERVICES, FAQS, TESTIMONIALS, UPCOMING_FESTIVALS } from '../data';
 import { Service } from '../types';
@@ -31,6 +32,80 @@ interface HomeViewProps {
 
 export default function HomeView({ language, onNavigateToServices, onNavigateToBook }: HomeViewProps) {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
+
+  // Rating Form States
+  const [revName, setRevName] = useState('');
+  const [revRole, setRevRole] = useState('');
+  const [revRating, setRevRating] = useState(5);
+  const [revComment, setRevComment] = useState('');
+  const [revSubmitted, setRevSubmitted] = useState(false);
+
+  // Load dynamic reviews state
+  const [reviews, setReviews] = useState<any[]>(() => {
+    try {
+      const stored = localStorage.getItem('custom_testimonials');
+      return stored ? [...TESTIMONIALS, ...JSON.parse(stored)] : TESTIMONIALS;
+    } catch (e) {
+      return TESTIMONIALS;
+    }
+  });
+
+  const handleAddReview = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (revName && revComment) {
+      const newRev = {
+        id: 'custom-rev-' + Date.now(),
+        name: revName,
+        role: revRole || (language === 'sa' ? 'भक्तः' : 'Devotee'),
+        rating: revRating,
+        comment: revComment,
+        avatarColor: ['bg-red-100 text-red-600', 'bg-blue-100 text-blue-600', 'bg-amber-100 text-amber-600', 'bg-purple-100 text-purple-600', 'bg-emerald-100 text-emerald-600'][Math.floor(Math.random() * 5)]
+      };
+      const stored = localStorage.getItem('custom_testimonials');
+      const list = stored ? JSON.parse(stored) : [];
+      list.push(newRev);
+      localStorage.setItem('custom_testimonials', JSON.stringify(list));
+      setReviews([...TESTIMONIALS, ...list]);
+      setRevSubmitted(true);
+      setTimeout(() => {
+        setRevSubmitted(false);
+        setIsReviewModalOpen(false);
+        setRevName('');
+        setRevRole('');
+        setRevRating(5);
+        setRevComment('');
+      }, 3000);
+    }
+  };
+
+  // Filter past festivals (monthly expiration)
+  const filterActiveFestivals = (list: any[]) => {
+    const now = new Date();
+    const currentYear = now.getFullYear();
+    const currentMonth = now.getMonth(); // 0-indexed (6 = July)
+
+    return list.filter(fest => {
+      try {
+        if (fest.date) {
+          const fDate = new Date(fest.date);
+          if (fDate.getFullYear() < currentYear) return false;
+          if (fDate.getFullYear() === currentYear && fDate.getMonth() < currentMonth) return false;
+          return true;
+        }
+        if (fest.day && fest.monthYear) {
+          const fDate = new Date(fest.day + ' ' + fest.monthYear);
+          if (isNaN(fDate.getTime())) return true;
+          if (fDate.getFullYear() < currentYear) return false;
+          if (fDate.getFullYear() === currentYear && fDate.getMonth() < currentMonth) return false;
+          return true;
+        }
+      } catch (e) {
+        console.error(e);
+      }
+      return true;
+    });
+  };
 
   // Filter 3 services to show as featured
   const featuredServices = SERVICES.slice(0, 3);
@@ -39,9 +114,10 @@ export default function HomeView({ language, onNavigateToServices, onNavigateToB
   const [festivals, setFestivals] = useState<any[]>(() => {
     try {
       const stored = localStorage.getItem('custom_festivals');
-      return stored ? JSON.parse(stored) : UPCOMING_FESTIVALS;
+      const list = stored ? JSON.parse(stored) : UPCOMING_FESTIVALS;
+      return filterActiveFestivals(list);
     } catch (e) {
-      return UPCOMING_FESTIVALS;
+      return filterActiveFestivals(UPCOMING_FESTIVALS);
     }
   });
 
@@ -50,7 +126,7 @@ export default function HomeView({ language, onNavigateToServices, onNavigateToB
       try {
         const stored = localStorage.getItem('custom_festivals');
         if (stored) {
-          setFestivals(JSON.parse(stored));
+          setFestivals(filterActiveFestivals(JSON.parse(stored)));
         }
       } catch (e) {
         console.error(e);
@@ -469,10 +545,17 @@ export default function HomeView({ language, onNavigateToServices, onNavigateToB
             {t('testimonials.title', language)}
           </h2>
           <div className="w-20 h-0.5 bg-[#a04100] mx-auto rounded-full mt-3"></div>
+          <button 
+            onClick={() => setIsReviewModalOpen(true)}
+            className="mt-6 px-5 py-2.5 bg-[#a04100] hover:bg-[#853500] text-white text-xs font-bold rounded-full hover:scale-105 transition-all cursor-pointer shadow-xs active:scale-95 flex items-center gap-1.5 mx-auto"
+          >
+            <span>★</span>
+            <span>{language === 'sa' ? 'समीक्षां लिखन्तु' : 'Write a Review / समीक्षा लिखें'}</span>
+          </button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {TESTIMONIALS.map((test) => {
+          {reviews.map((test) => {
             return (
               <div 
                 key={test.id} 
@@ -503,6 +586,114 @@ export default function HomeView({ language, onNavigateToServices, onNavigateToB
           })}
         </div>
       </section>
+
+      
+      {/* Write a Review Modal */}
+      <AnimatePresence>
+        {isReviewModalOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="bg-white dark:bg-[#141211] border border-[#e2bfb0]/30 dark:border-[#e2bfb0]/15 p-6 md:p-8 rounded-3xl max-w-md w-full shadow-2xl space-y-6"
+            >
+              <div className="flex justify-between items-center pb-4 border-b border-[#e2bfb0]/15 dark:border-[#e2bfb0]/10">
+                <h3 className="font-serif text-lg font-bold text-[#a04100] dark:text-[#ff9d66]">
+                  {language === 'sa' ? 'नूतन-समीक्षा-लेखनम्' : 'Submit a Review / समीक्षा लिखें'}
+                </h3>
+                <button 
+                  onClick={() => setIsReviewModalOpen(false)}
+                  className="p-1 hover:bg-[#ffdbcc]/20 rounded-full cursor-pointer text-[#5a4136] dark:text-[#fbf9f8]/60"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {revSubmitted ? (
+                <div className="py-12 text-center space-y-3">
+                  <div className="w-12 h-12 bg-green-100 dark:bg-green-950/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mx-auto">
+                    ✓
+                  </div>
+                  <h4 className="font-bold text-base text-[#1b1c1c] dark:text-[#fbf9f8]">Review Submitted!</h4>
+                  <p className="text-xs text-[#5a4136]/75 dark:text-[#fbf9f8]/60">Thank you for sharing your divine experience.</p>
+                </div>
+              ) : (
+                <form onSubmit={handleAddReview} className="space-y-4">
+                  <div className="space-y-1">
+                    <label className="text-[10px] font-bold uppercase tracking-wider text-[#5a4136] dark:text-[#fbf9f8]/70">Your Name / नाम</label>
+                    <input 
+                      type="text" 
+                      required
+                      placeholder="e.g. Rahul Sharma"
+                      value={revName}
+                      onChange={(e) => setRevName(e.target.value)}
+                      className="w-full px-4 py-2.5 bg-[#fbf9f8] dark:bg-[#0c0b0a] border border-[#e2bfb0]/30 dark:border-[#e2bfb0]/15 rounded-xl text-xs text-[#1b1c1c] dark:text-[#fbf9f8]"
+                    />
+                  </div>
+
+                  <div className="space-y-1">
+                    <label className="text-[10px] font-bold uppercase tracking-wider text-[#5a4136] dark:text-[#fbf9f8]/70">Role / पद (e.g. Devotee, Homeowner)</label>
+                    <input 
+                      type="text"
+                      placeholder="e.g. Devotee"
+                      value={revRole}
+                      onChange={(e) => setRevRole(e.target.value)}
+                      className="w-full px-4 py-2.5 bg-[#fbf9f8] dark:bg-[#0c0b0a] border border-[#e2bfb0]/30 dark:border-[#e2bfb0]/15 rounded-xl text-xs text-[#1b1c1c] dark:text-[#fbf9f8]"
+                    />
+                  </div>
+
+                  <div className="space-y-1">
+                    <label className="text-[10px] font-bold uppercase tracking-wider text-[#5a4136] dark:text-[#fbf9f8]/70 block mb-1">Rating / रेटिंग</label>
+                    <div className="flex gap-1.5">
+                      {[1, 2, 3, 4, 5].map((starVal) => (
+                        <button
+                          key={starVal}
+                          type="button"
+                          onClick={() => setRevRating(starVal)}
+                          className="cursor-pointer transition-transform active:scale-90"
+                        >
+                          <Star 
+                            className={'w-7 h-7 ' + (starVal <= revRating ? 'fill-amber-500 text-amber-500' : 'text-gray-300 dark:text-zinc-700')}
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="space-y-1">
+                    <label className="text-[10px] font-bold uppercase tracking-wider text-[#5a4136] dark:text-[#fbf9f8]/70">Your Review / समीक्षा</label>
+                    <textarea 
+                      rows={3}
+                      required
+                      placeholder="Share your spiritual feedback..."
+                      value={revComment}
+                      onChange={(e) => setRevComment(e.target.value)}
+                      className="w-full px-4 py-2.5 bg-[#fbf9f8] dark:bg-[#0c0b0a] border border-[#e2bfb0]/30 dark:border-[#e2bfb0]/15 rounded-xl text-xs text-[#1b1c1c] dark:text-[#fbf9f8]"
+                    />
+                  </div>
+
+                  <div className="flex gap-3 pt-2">
+                    <button 
+                      type="button"
+                      onClick={() => setIsReviewModalOpen(false)}
+                      className="flex-1 py-3 border border-[#e2bfb0]/30 text-[#5a4136] dark:text-[#fbf9f8]/80 text-xs font-bold rounded-xl hover:bg-gray-50 dark:hover:bg-zinc-800 transition-colors cursor-pointer"
+                    >
+                      Cancel
+                    </button>
+                    <button 
+                      type="submit"
+                      className="flex-1 py-3 bg-[#a04100] text-white text-xs font-bold rounded-xl hover:bg-[#853500] transition-colors cursor-pointer shadow-xs"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </form>
+              )}
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
 
       {/* Frequently Asked Questions */}
       <section className="max-w-3xl mx-auto px-6">

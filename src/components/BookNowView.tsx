@@ -102,6 +102,32 @@ export default function BookNowView({
 
   // Load dynamic festivals list to show auspicious dates in date picker
   const [festivals, setFestivals] = useState<any[]>(() => {
+    const filterActiveFestivals = (list: any[]) => {
+      const now = new Date();
+      const currentYear = now.getFullYear();
+      const currentMonth = now.getMonth(); // 0-indexed (6 = July)
+      return list.filter(fest => {
+        try {
+          if (fest.date) {
+            const fDate = new Date(fest.date);
+            if (fDate.getFullYear() < currentYear) return false;
+            if (fDate.getFullYear() === currentYear && fDate.getMonth() < currentMonth) return false;
+            return true;
+          }
+          if (fest.day && fest.monthYear) {
+            const fDate = new Date(fest.day + ' ' + fest.monthYear);
+            if (isNaN(fDate.getTime())) return true;
+            if (fDate.getFullYear() < currentYear) return false;
+            if (fDate.getFullYear() === currentYear && fDate.getMonth() < currentMonth) return false;
+            return true;
+          }
+        } catch (e) {
+          console.error(e);
+        }
+        return true;
+      });
+    };
+
     try {
       const stored = localStorage.getItem('custom_festivals');
       if (stored) {
@@ -112,11 +138,11 @@ export default function BookNowView({
             merged.push(defFest);
           }
         });
-        return merged;
+        return filterActiveFestivals(merged);
       }
-      return UPCOMING_FESTIVALS;
+      return filterActiveFestivals(UPCOMING_FESTIVALS);
     } catch (e) {
-      return UPCOMING_FESTIVALS;
+      return filterActiveFestivals(UPCOMING_FESTIVALS);
     }
   });
 

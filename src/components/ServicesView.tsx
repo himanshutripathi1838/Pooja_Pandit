@@ -143,6 +143,17 @@ export default function ServicesView({ language, onSelectServiceToBook, services
                       <h3 className="font-serif font-bold text-lg text-[#a04100] leading-tight">
                         {t(service.name, language)}
                       </h3>
+                      {/* Service rating stars */}
+                      <div className="flex items-center gap-1 mt-1 text-amber-500">
+                        <div className="flex gap-0.5">
+                          {[1, 2, 3, 4, 5].map((s) => (
+                            <Star key={s} className="w-3 h-3 fill-current" />
+                          ))}
+                        </div>
+                        <span className="text-[9px] text-[#5a4136]/75 dark:text-zinc-400 font-bold ml-1">
+                          4.9 (48+ reviews)
+                        </span>
+                      </div>
                       <span className="font-semibold text-sm text-[#735c00] shrink-0 font-sans">
                         ₹{service.price.toLocaleString()}
                       </span>

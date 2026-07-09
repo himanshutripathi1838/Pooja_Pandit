@@ -298,6 +298,12 @@ export default function HomeView({ language, onNavigateToServices, onNavigateToB
               <h3 className="font-serif text-2xl font-bold text-white mb-2">
                 {t('bento.satyanarayan.title', language)}
               </h3>
+              <div className="flex items-center gap-0.5 text-amber-400 mb-3">
+                {[1, 2, 3, 4, 5].map((s) => (
+                  <Star key={s} className="w-3.5 h-3.5 fill-current" />
+                ))}
+                <span className="text-[10px] text-white/90 font-bold ml-1.5">4.9 (64 reviews)</span>
+              </div>
               <p className="text-white/80 max-w-md text-sm mb-6">
                 {t('bento.satyanarayan.desc', language)}
               </p>
@@ -328,6 +334,12 @@ export default function HomeView({ language, onNavigateToServices, onNavigateToB
                 <h3 className="font-serif text-lg font-bold text-[#1b1c1c] dark:text-[#fbf9f8] mb-2">
                   {t('bento.rudrabhishek.title', language)}
                 </h3>
+                <div className="flex items-center gap-0.5 text-amber-500 mb-2">
+                  {[1, 2, 3, 4, 5].map((s) => (
+                    <Star key={s} className="w-3 h-3 fill-current" />
+                  ))}
+                  <span className="text-[10px] text-[#5a4136]/80 dark:text-[#fbf9f8]/60 font-bold ml-1.5">4.9 (52 reviews)</span>
+                </div>
                 <p className="text-[#5a4136] dark:text-[#fbf9f8]/70 text-xs line-clamp-3">
                   {t('bento.rudrabhishek.desc', language)}
                 </p>

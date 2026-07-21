@@ -393,6 +393,136 @@ export default function HomeView({ language, onNavigateToServices, onNavigateToB
         </div>
       </section>
 
+      
+      {/* Popular Pujas & Sacred Havans Showcase */}
+      <section className="max-w-7xl mx-auto px-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div className="space-y-2">
+            <span className="text-xs font-bold text-[#a04100] tracking-wider uppercase block">
+              {language === 'sa' ? 'लोकप्रिय-वैदिक-पूजाः' : 'Vedic Rituals & Havans'}
+            </span>
+            <h2 className="font-serif text-2xl md:text-4xl font-bold text-[#1b1c1c] dark:text-[#fbf9f8]">
+              {language === 'sa' ? 'मुख्यपूजाः अनुष्ठानानि च' : 'Featured Pujas, Havans & Anushthans'}
+            </h2>
+            <p className="text-sm text-[#5a4136] dark:text-[#fbf9f8]/70 max-w-xl">
+              {language === 'sa' 
+                ? 'वेदोक्तविधिना सम्पाद्यमानाः प्रमुखाः पूजाः हवनविधयश्च।' 
+                : 'Book certified Vedic Pandits for Chandi Havan, Mahamrityunjay Jap, Navgrah Shanti, Kaal Sarp Dosh, and all Sanatan Pujas.'}
+            </p>
+          </div>
+          <button 
+            onClick={onNavigateToServices}
+            className="px-6 py-3 bg-[#a04100] hover:bg-[#853500] text-white text-xs font-bold rounded-full hover:scale-105 transition-all cursor-pointer shadow-md flex items-center gap-2 shrink-0"
+          >
+            <span>{language === 'sa' ? 'सर्वाः ४५+ सेवाः पश्यन्तु' : 'Explore All 45+ Services'}</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            {
+              id: 'chandihavan',
+              name: 'Chandi Havan',
+              nameHi: 'चंडी हवन',
+              price: '₹7,000',
+              img: '/assets/chandi_havan.png',
+              badge: 'Protection',
+              desc: 'Powerful Vedic Havan dedicated to Goddess Chandi for victory over negative forces & divine protection.'
+            },
+            {
+              id: 'mahamrityunjayjap',
+              name: 'Mahamrityunjay Jap',
+              nameHi: 'महामृत्युंजय जाप',
+              price: '₹11,000',
+              img: '/assets/mahamrityunjay_jap.png',
+              badge: 'Health',
+              desc: 'Sacred chanting of 11,000 Maha Mrityunjaya Mantras for health rejuvenation, longevity & Shiva blessings.'
+            },
+            {
+              id: 'navgrahshanti',
+              name: 'Navgrah Shanti Puja',
+              nameHi: 'नवग्रह शांति पूजा',
+              price: '₹11,000',
+              img: '/assets/navgrah_shanti.png',
+              badge: 'Astrology',
+              desc: 'Planetary alignment ritual with 9 colored grains & wood to pacify all nine planets & eliminate doshas.'
+            },
+            {
+              id: 'kaalsarpdosh',
+              name: 'Kaal Sarp Dosh Puja',
+              nameHi: 'कालसर्प दोष पूजा',
+              price: '₹11,000',
+              img: '/assets/kaalsarp_dosh.png',
+              badge: 'Remedy',
+              desc: 'Specialized Vedic ritual with silver Nag Devta idol & havan to neutralize Rahu-Ketu Kaal Sarp Dosh.'
+            },
+            {
+              id: 'pitradosh',
+              name: 'Pitra Dosh Shanti Puja',
+              nameHi: 'पितृ दोष शांति पूजा',
+              price: '₹11,000',
+              img: '/assets/pitra_dosh.png',
+              badge: 'Ancestral',
+              desc: 'Ancestral Tarpan & Pinda Daan ceremony to seek blessings of ancestors and achieve family progress.'
+            },
+            {
+              id: 'ramcharitmanas',
+              name: 'Musical Ramcharitmanas Path',
+              nameHi: 'संगीतबद्ध श्रीरामचरितमानस पाठ',
+              price: '₹25,000',
+              img: '/assets/ramcharitmanas.png',
+              badge: 'Akhand Path',
+              desc: 'Complete 24-hour Akhand recitation of Sri Ramcharitmanas with devotional musical accompaniment.'
+            }
+          ].map((item, idx) => (
+            <div 
+              key={idx}
+              className="group bg-white dark:bg-[#141211] rounded-2xl overflow-hidden shadow-md border border-[#e2bfb0]/25 dark:border-[#e2bfb0]/10 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
+            >
+              <div className="h-48 overflow-hidden relative">
+                <img 
+                  src={item.img} 
+                  alt={item.name} 
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <span className="absolute top-3 right-3 bg-[#a04100] text-white text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                  {item.badge}
+                </span>
+              </div>
+              <div className="p-6 space-y-4 flex-grow flex flex-col justify-between">
+                <div className="space-y-2">
+                  <div className="flex justify-between items-start">
+                    <h3 className="font-serif font-bold text-base text-[#1b1c1c] dark:text-[#fbf9f8]">
+                      {language === 'hi' ? item.nameHi : item.name}
+                    </h3>
+                    <span className="font-bold text-sm text-[#a04100] dark:text-[#ff9d66]">{item.price}</span>
+                  </div>
+                  <div className="flex items-center gap-1 text-amber-500">
+                    {[1, 2, 3, 4, 5].map((s) => (
+                      <Star key={s} className="w-3 h-3 fill-current" />
+                    ))}
+                    <span className="text-[10px] text-[#5a4136]/70 dark:text-zinc-400 font-bold ml-1">4.9 (50+ reviews)</span>
+                  </div>
+                  <p className="text-xs text-[#5a4136] dark:text-[#fbf9f8]/70 line-clamp-2 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+                <button
+                  onClick={() => onNavigateToBook(item.id)}
+                  className="w-full py-2.5 bg-[#f6f3f2] dark:bg-[#0c0b0a] hover:bg-[#a04100] text-[#a04100] hover:text-white dark:text-[#ff9d66] text-xs font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-1.5"
+                >
+                  <span>{language === 'sa' ? 'सङ्कल्पं कुर्वन्तु' : 'Book Now'}</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+
       {/* Upcoming Festivals Section */}
       <section className="py-20 bg-[#f6f3f2]">
         <div className="max-w-7xl mx-auto px-6">

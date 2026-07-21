@@ -40,7 +40,7 @@ export default function ContactView({ language }: ContactViewProps) {
         <p className="text-[#5a4136] dark:text-[#fbf9f8]/70 text-sm md:text-base leading-relaxed">
           {language === 'sa' 
             ? 'विशिष्टमहायज्ञानाम्, जन्मपत्रिकापरामर्शस्य वा कृते अधोदत्तं पत्रं पूरयन्तु।'
-            : 'For customized Vedic rituals, Mahayagnas, astrological balancing, or custom Gotra prayers, send your requests directly to Pandit Dheeraj Tripathi.'}
+            : 'For customized Vedic rituals, Mahayagnas, astrological balancing, or custom Gotra prayers, send your requests directly to Pandit Dhirendra Shastri Ji.'}
         </p>
       </div>
 

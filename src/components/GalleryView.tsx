@@ -4,7 +4,7 @@ import { Play, Image as ImageIcon, Video, X, Maximize2 } from 'lucide-react';
 import { Language, t } from '../translations';
 
 // Import local assets
-import acharyaPhoto from '../assets/acharya_shlokam.jpg';
+import acharyaPhoto from '../assets/pandit_dheeraj_portrait.png';
 import diwaliLakshmiImg from '../assets/diwali_lakshmi_puja.png';
 import marriageCeremonyImg from '../assets/marriage_ceremony.png';
 import birthdayPujaImg from '../assets/birthday_puja.png';

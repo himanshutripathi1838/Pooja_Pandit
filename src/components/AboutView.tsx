@@ -52,14 +52,23 @@ export default function AboutView({ language }: AboutViewProps) {
 
           {/* Portrait Image */}
           <div className="md:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-sm aspect-4/5 rounded-2xl overflow-hidden shadow-xl shadow-[#a33b38]/10 border border-[#e2bfb0]/20 group">
-              <div className="absolute inset-0 bg-linear-to-t from-[#1b1c1c]/40 via-transparent to-transparent z-10"></div>
-              <img 
-                src={acharyaPhoto} 
-                alt="Pandit Dheeraj Tripathi - 10+ Years Vedic Scholar" 
-                loading="lazy"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
+            <div className="relative w-full max-w-md bg-white dark:bg-[#141211] p-3 rounded-3xl shadow-2xl shadow-[#a33b38]/15 border border-[#e2bfb0]/30 group">
+              <div className="overflow-hidden rounded-2xl bg-[#fdfbf7] dark:bg-[#0c0b0a] flex justify-center items-center">
+                <img 
+                  src={acharyaPhoto} 
+                  alt="Pandit Dhirendra Shastri Ji - 10+ Years Vedic Scholar" 
+                  loading="lazy"
+                  className="w-full h-auto max-h-[600px] object-contain group-hover:scale-102 transition-transform duration-500 mx-auto"
+                />
+              </div>
+              <div className="text-center pt-3 pb-1">
+                <p className="font-serif font-bold text-base text-[#a04100] dark:text-[#ff9d66]">
+                  {language === 'sa' ? 'पं. धीरेंद्र शास्त्री जी' : 'Pandit Dhirendra Shastri Ji'}
+                </p>
+                <p className="text-[11px] font-semibold text-[#5a4136]/75 dark:text-[#fbf9f8]/60 uppercase tracking-widest mt-0.5">
+                  {language === 'sa' ? '10+ वर्षाणाम् वैदिक अनुभवः' : '10+ Years Experienced Vedic Pandit'}
+                </p>
+              </div>
             </div>
           </div>
 

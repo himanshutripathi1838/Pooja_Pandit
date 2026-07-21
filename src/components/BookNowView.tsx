@@ -304,7 +304,7 @@ export default function BookNowView({
     const event = {
       summary: `Puja Ceremony: ${activeService.name}`,
       location: `${street}, ${city}, ${state} ${postalCode}`,
-      description: `Spiritual puja blessing and ceremony conducted by Pandit Dheeraj Tripathi.\nDevotee: ${fullName}\nAmount: ₹${activeService.price.toLocaleString()}\nStatus: Pending Confirmation.`,
+      description: `Spiritual puja blessing and ceremony conducted by Pandit Dhirendra Shastri Ji.\nDevotee: ${fullName}\nAmount: ₹${activeService.price.toLocaleString()}\nStatus: Pending Confirmation.`,
       start: {
         dateTime: startDateTime,
         timeZone: 'Asia/Kolkata'

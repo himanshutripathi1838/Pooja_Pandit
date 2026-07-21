@@ -1393,7 +1393,7 @@ export default function AdminDashboardView({
                     <textarea 
                       required
                       rows={4}
-                      placeholder="e.g. Join Pandit Dheeraj Tripathi live for a global Sankalpa on July 9..."
+                      placeholder="e.g. Join Pandit Dhirendra Shastri Ji live for a global Sankalpa on July 9..."
                       value={broadcastMessage}
                       onChange={(e) => setBroadcastMessage(e.target.value)}
                       className="bg-white border border-[#e2bfb0]/40 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none focus:border-[#a04100] resize-none"

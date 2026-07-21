@@ -364,8 +364,8 @@ export default function ServicesView({ language, onSelectServiceToBook, services
                   </h3>
                   <p className="text-xs text-[#5a4136] leading-relaxed">
                     {language === 'sa' 
-                      ? 'भवतः विशिष्टपूजाप्रार्थना स्वीकृता अस्ति। पण्डित धीरज त्रिपाठी २ घंटे अभ्यन्तरे भवतः दूरभाषे सम्पर्कं करिष्यति।'
-                      : 'Your bespoke Puja request has been delivered to Pandit Dheeraj Tripathi. Our representatives will call you shortly with Vastu/Astrology details.'
+                      ? 'भवतः विशिष्टपूजाप्रार्थना स्वीकृता अस्ति। पण्डित धीरेंद्र शास्त्री जी २ घंटे अभ्यन्तरे भवतः दूरभाषे सम्पर्कं करिष्यति।'
+                      : 'Your bespoke Puja request has been delivered to Pandit Dhirendra Shastri Ji. Our representatives will call you shortly with Vastu/Astrology details.'
                     }
                   </p>
                 </div>

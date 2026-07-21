@@ -45,7 +45,7 @@ export default function Header({ activeTab, setActiveTab, language, setLanguage,
                 Pooja Pandit
               </span>
               <span className="text-[10px] text-[#5a4136]/70 uppercase tracking-widest font-semibold block mt-1">
-                Pandit Dheeraj Tripathi
+                Pandit Dhirendra Shastri Ji
               </span>
             </div>
           </button>
@@ -171,12 +171,12 @@ export default function Header({ activeTab, setActiveTab, language, setLanguage,
                 <img 
                   src={panditPortrait} 
                   alt="Pandit Portrait"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
               <div>
                 <p className="font-bold text-sm text-[#a04100] dark:text-[#ff9d66]">
-                  {language === 'sa' ? 'धीरज त्रिपाठी' : language === 'te' ? 'ధీరజ్ త్రిపాఠి' : 'Dheeraj Tripathi'}
+                  {language === 'sa' ? 'धीरेंद्र शास्त्री जी' : language === 'te' ? 'ధీరేంద్ర శాస్త్రి జీ' : 'Pandit Dhirendra Shastri Ji'}
                 </p>
                 <p className="text-[10px] text-[#5a4136]/70 dark:text-[#fbf9f8]/60 uppercase tracking-wider font-semibold">
                   {language === 'sa' ? 'ऋग्वेदाचार्य' : 'Vedic Master'}

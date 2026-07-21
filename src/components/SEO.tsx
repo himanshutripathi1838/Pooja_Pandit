@@ -16,7 +16,7 @@ interface SEOProps {
 export default function SEO({
   title,
   description,
-  keywords = 'pandit ji in hyderabad, pooja booking hyderabad, vedic pandit hyderabad, north indian pandit in hyderabad, telugu pandit hyderabad, griha pravesh pandit hyderabad, rudrabhishek in hyderabad, kaal sarp dosh puja hyderabad, chandi havan hyderabad, pujapandit.tech, pandit dheeraj tripathi hyderabad',
+  keywords = 'pandit ji in hyderabad, pooja booking hyderabad, vedic pandit hyderabad, north indian pandit in hyderabad, telugu pandit hyderabad, griha pravesh pandit hyderabad, rudrabhishek in hyderabad, kaal sarp dosh puja hyderabad, chandi havan hyderabad, pujapandit.tech, pandit pandit dhirendra shastri ji hyderabad',
   canonicalPath = '',
   ogImage = 'https://pujapandit.tech/assets/images/pooja_pandit_logo_1783261742775.jpg',
   ogType = 'website',
@@ -26,7 +26,7 @@ export default function SEO({
   
   useEffect(() => {
     // 1. Title tag
-    document.title = `${title} | Pandit Dheeraj Tripathi`;
+    document.title = `${title} | Pandit Dhirendra Shastri Ji`;
 
     // 2. Canonical Link Tag
     const fullCanonicalUrl = `https://pujapandit.tech${canonicalPath}`;
@@ -53,11 +53,11 @@ export default function SEO({
     // 4. Standard Metadata Tags
     setMetaTag('name', 'description', description);
     setMetaTag('name', 'keywords', keywords);
-    setMetaTag('name', 'author', 'Pandit Dheeraj Tripathi');
+    setMetaTag('name', 'author', 'Pandit Dhirendra Shastri Ji');
     setMetaTag('name', 'robots', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
 
     // 5. Open Graph Meta Tags
-    setMetaTag('property', 'og:title', `${title} | Pandit Dheeraj Tripathi`, true);
+    setMetaTag('property', 'og:title', `${title} | Pandit Dhirendra Shastri Ji`, true);
     setMetaTag('property', 'og:description', description, true);
     setMetaTag('property', 'og:image', ogImage, true);
     setMetaTag('property', 'og:url', fullCanonicalUrl, true);
@@ -66,7 +66,7 @@ export default function SEO({
 
     // 6. Twitter Meta Tags
     setMetaTag('name', 'twitter:card', 'summary_large_image');
-    setMetaTag('name', 'twitter:title', `${title} | Pandit Dheeraj Tripathi`);
+    setMetaTag('name', 'twitter:title', `${title} | Pandit Dhirendra Shastri Ji`);
     setMetaTag('name', 'twitter:description', description);
     setMetaTag('name', 'twitter:image', ogImage);
 

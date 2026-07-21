@@ -87,14 +87,21 @@ export default function App() {
       const stored = localStorage.getItem('pooja_services');
       if (stored) {
         const parsed: Service[] = JSON.parse(stored);
-        const merged = [...parsed];
-        INITIAL_SERVICES.forEach(initService => {
-          if (!merged.some(s => s.id === initService.id)) {
-            merged.push(initService);
+        // Force update any missing or updated service image URLs from INITIAL_SERVICES
+        const updated = INITIAL_SERVICES.map(initService => {
+          const found = parsed.find(s => s.id === initService.id);
+          return found ? { ...found, imageUrl: initService.imageUrl } : initService;
+        });
+        // Add any purely custom admin services
+        parsed.forEach(customS => {
+          if (!updated.some(s => s.id === customS.id)) {
+            updated.push(customS);
           }
         });
-        return merged;
+        localStorage.setItem('pooja_services', JSON.stringify(updated));
+        return updated;
       }
+      localStorage.setItem('pooja_services', JSON.stringify(INITIAL_SERVICES));
       return INITIAL_SERVICES;
     } catch (e) {
       return INITIAL_SERVICES;

@@ -21,15 +21,37 @@ export interface TimelineEvent {
 export interface Testimonial {
   id: string;
   name: string;
-  role: string;
+  role?: string;
+  city?: string;
   rating: number;
+  date?: string;
   comment: string;
-  avatarColor: string;
+  pujaName?: string;
+  avatarColor?: string;
+}
+
+export interface FAQItem {
+  question: string;
+  answer: string;
+  category?: string;
+  questionKey?: string;
+  answerKey?: string;
 }
 
 export interface FAQ {
   question: string;
   answer: string;
+}
+
+export interface UpcomingFestival {
+  id: string;
+  day: string;
+  monthYear: string;
+  title: string;
+  description: string;
+  titleKey?: string;
+  icon?: string;
+  color?: string;
 }
 
 export interface Booking {

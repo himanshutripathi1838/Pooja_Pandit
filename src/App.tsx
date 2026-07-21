@@ -87,12 +87,12 @@ export default function App() {
       const stored = localStorage.getItem('pooja_services');
       if (stored) {
         const parsed: Service[] = JSON.parse(stored);
-        // Force update any missing or updated service image URLs from INITIAL_SERVICES
-        const updated = INITIAL_SERVICES.map(initService => {
-          const found = parsed.find(s => s.id === initService.id);
-          return found ? { ...found, imageUrl: initService.imageUrl } : initService;
-        });
-        // Add any purely custom admin services
+        // Force update all service image URLs directly from INITIAL_SERVICES data.ts
+        const updated = INITIAL_SERVICES.map(initService => ({
+          ...initService,
+          imageUrl: initService.imageUrl
+        }));
+        // Preserve any purely user-added custom admin services
         parsed.forEach(customS => {
           if (!updated.some(s => s.id === customS.id)) {
             updated.push(customS);

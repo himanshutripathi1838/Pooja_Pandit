@@ -15,7 +15,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 29,
     "duration": "2 Hours",
     "panditsCount": "1 Pandit",
-    "imageUrl": "https://images.unsplash.com/photo-1609137144987-7f9984920251?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": diwaliLakshmiImg,
     "badge": "Popular",
     "description": "Traditional Sri Satyanarayan Swami Katha and Puja for health, wealth, family harmony, and auspicious milestone celebrations.",
     "details": [
@@ -33,7 +33,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 79,
     "duration": "3 Hours",
     "panditsCount": "2 Pandits",
-    "imageUrl": "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": "/assets/mahamrityunjay_jap.png",
     "badge": "High Energy",
     "description": "Sacred bathing ritual of Shivling with 11 holy ingredients alongside Shukla Yajurveda Rudrashtadhyayi mantra chanting.",
     "details": [
@@ -51,7 +51,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 99,
     "duration": "4 Hours",
     "panditsCount": "2 Pandits",
-    "imageUrl": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": officeOpeningImg,
     "badge": "Essential",
     "description": "Complete auspicious new house entrance ritual incorporating Vastu Shanti, Navgrah Havan, and Lakshmi-Ganesh invocation.",
     "details": [
@@ -69,7 +69,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 49,
     "duration": "2.5 Hours",
     "panditsCount": "1 Pandit",
-    "imageUrl": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": ganeshChaturthiImg,
     "badge": "Obstacle Removal",
     "description": "Specialized Ganpati Atharvashirsha Havan for removing obstacles, career growth, financial stability, and wisdom.",
     "details": [
@@ -87,7 +87,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 15,
     "duration": "1.5 Hours",
     "panditsCount": "1 Pandit",
-    "imageUrl": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": "/assets/gayatri_jap.png",
     "badge": "Live HD Stream",
     "description": "Live interactive video stream of authentic Vedic Pujas performed at holy ghats or temples in Varanasi for global devotees.",
     "details": [
@@ -105,7 +105,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 45,
     "duration": "2 Hours",
     "panditsCount": "1 Pandit",
-    "imageUrl": "https://images.unsplash.com/photo-1544717304-a2db4a7b16ee?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": birthdayPujaImg,
     "badge": "Sanskar",
     "description": "Auspicious Naming Ceremony for newborn babies incorporating astrological Janma Nakshatra calculations and Ayushya Havan.",
     "details": [
@@ -123,7 +123,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 15,
     "duration": "45 Mins",
     "panditsCount": "1 Acharya",
-    "imageUrl": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": "/assets/navgrah_shanti.png",
     "badge": "1-on-1 Consultation",
     "description": "Detailed birth chart analysis, Dasha predictions, career, marriage compatibility, and authentic Vedic remedial measures.",
     "details": [
@@ -195,7 +195,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 35,
     "duration": "2 Hours",
     "panditsCount": "1 Pandit",
-    "imageUrl": "https://images.unsplash.com/photo-1590077428593-a55bb07c4665?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": "/assets/gayatri_jap.png",
     "badge": "Wisdom & Knowledge",
     "description": "Sacred worship of Goddess Saraswati for academic excellence, musical talent, concentration, and competitive exam success.",
     "details": [
@@ -286,7 +286,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 149,
     "duration": "4 Hours",
     "panditsCount": "2 Pandits",
-    "imageUrl": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": "/assets/mahamrityunjay_jap.png",
     "badge": "Health",
     "description": "Sacred chanting of the Maha Mrityunjaya Mantra for health rejuvenation, longevity, and divine Shiva blessings.",
     "details": [
@@ -457,7 +457,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 139,
     "duration": "3 Hours",
     "panditsCount": "2 Pandits",
-    "imageUrl": "https://images.unsplash.com/photo-1621274790572-7c32596bc67f?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": "/assets/mahamrityunjay_jap.png",
     "badge": "Shiva",
     "description": "Comprehensive Shiva Puja and Rudrabhishek for chronic illness relief, peace, and longevity.",
     "details": [
@@ -533,7 +533,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 299,
     "duration": "7 Days",
     "panditsCount": "2 Pandits",
-    "imageUrl": "https://images.unsplash.com/photo-1609137144813-7d9921338f24?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": "/assets/ramcharitmanas.png",
     "badge": "Katha Saptah",
     "description": "Seven-day (Saptah) divine narration of Shreemad Bhagwat Purana for spiritual liberation and family prosperity.",
     "details": [
@@ -552,7 +552,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 29,
     "duration": "1.5 Hours",
     "panditsCount": "1 Pandit",
-    "imageUrl": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": officeOpeningImg,
     "badge": "Blessing",
     "description": "Auspicious blessing ritual for new cars, commercial vehicles, and shops for accident protection and business growth.",
     "details": [
@@ -571,7 +571,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 69,
     "duration": "2.5 Hours",
     "panditsCount": "1 Pandit",
-    "imageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": birthdayPujaImg,
     "badge": "Sanskar",
     "description": "Traditional first haircut Sanskar for infants to cleanse past-life impurities and ensure health & longevity.",
     "details": [
@@ -590,7 +590,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 99,
     "duration": "3.5 Hours",
     "panditsCount": "2 Pandits",
-    "imageUrl": "https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": birthdayPujaImg,
     "badge": "Progeny Blessing",
     "description": "Sacred ritual dedicated to Lord Bal Gopal for childless couples seeking healthy, intelligent progeny.",
     "details": [
@@ -609,7 +609,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 49,
     "duration": "2 Hours",
     "panditsCount": "1 Pandit",
-    "imageUrl": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": marriageCeremonyImg,
     "badge": "Couples",
     "description": "Marriage anniversary blessing Havan dedicated to Shiva-Parvati for lifelong love, harmony, and togetherness.",
     "details": [
@@ -628,7 +628,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 49,
     "duration": "2.5 Hours",
     "panditsCount": "1 Pandit",
-    "imageUrl": "https://images.unsplash.com/photo-1618172193763-c511deb635ca?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": diwaliLakshmiImg,
     "badge": "Devotional",
     "description": "Ceremonial marriage of Holy Tulsi plant with Lord Shaligram (Vishnu) marking the start of Hindu wedding season.",
     "details": [
@@ -647,7 +647,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 69,
     "duration": "3 Hours",
     "panditsCount": "1 Pandit",
-    "imageUrl": "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": diwaliLakshmiImg,
     "badge": "Post-Diwali",
     "description": "Post-Diwali Krishna Govardhan Giriraj worship with 56 Bhog Annakut offerings for agricultural & business wealth.",
     "details": [
@@ -666,7 +666,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 29,
     "duration": "1.5 Hours",
     "panditsCount": "1 Pandit",
-    "imageUrl": "https://images.unsplash.com/photo-1570042707222-63630f977bfb?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": officeOpeningImg,
     "badge": "Sacred Cow",
     "description": "Sacred worship and green fodder (Gras Daan) feeding to Kamadhenu Cow in gaushala for erasing all sin karma.",
     "details": [
@@ -685,7 +685,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 69,
     "duration": "3 Hours",
     "panditsCount": "1 Pandit",
-    "imageUrl": "https://images.unsplash.com/photo-1512290900676-26c2a4ed4079?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": "/assets/chandi_havan.png",
     "badge": "Healing",
     "description": "Specialized Vedic Havan dedicated to Lord Dhanvantari, divine physician of Devas, for relief from ailments and radiant health.",
     "details": [
@@ -704,7 +704,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 99,
     "duration": "3.5 Hours",
     "panditsCount": "2 Pandits",
-    "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": "/assets/chandi_havan.png",
     "badge": "Sudarshan Chakra",
     "description": "Supreme Vishnu Sudarshan Chakra Havan to dispel negative energies, evil eye, black magic, and chronic fears.",
     "details": [
@@ -723,7 +723,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 69,
     "duration": "3 Hours",
     "panditsCount": "1 Pandit",
-    "imageUrl": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": "/assets/ramcharitmanas.png",
     "badge": "1000 Names",
     "description": "Recitation of 1,000 divine names of Lord Vishnu followed by Tulsi Havan for peace, harmony, and liberation.",
     "details": [
@@ -742,7 +742,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 69,
     "duration": "3 Hours",
     "panditsCount": "1 Pandit",
-    "imageUrl": "https://images.unsplash.com/photo-1508672019048-805479767382?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": diwaliLakshmiImg,
     "badge": "Wealth Remedy",
     "description": "Adi Shankaracharya Kanakdhara Stotra ritual for unexpected wealth flow, debt relief, and Lakshmi blessings.",
     "details": [
@@ -761,7 +761,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 129,
     "duration": "4 Hours",
     "panditsCount": "2 Pandits",
-    "imageUrl": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": diwaliLakshmiImg,
     "badge": "8-Fold Prosperity",
     "description": "Grand worship of eight forms of Goddess Lakshmi for wealth, courage, grain, progeny, knowledge, and victory.",
     "details": [
@@ -780,7 +780,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 99,
     "duration": "3.5 Hours",
     "panditsCount": "2 Pandits",
-    "imageUrl": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": officeOpeningImg,
     "badge": "Land Sanctification",
     "description": "Foundation stone laying ceremony for new plots, house construction, and commercial building Vastu Shanti.",
     "details": [
@@ -799,7 +799,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 49,
     "duration": "2 Hours",
     "panditsCount": "1 Pandit",
-    "imageUrl": "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": "/assets/gayatri_jap.png",
     "badge": "Sanskar",
     "description": "Sacred first learning initiation for young children (Aksharabhyasam) seeking Goddess Saraswati wisdom.",
     "details": [
@@ -818,7 +818,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 99,
     "duration": "4 Hours",
     "panditsCount": "2 Pandits",
-    "imageUrl": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": "/assets/gayatri_jap.png",
     "badge": "Vedic Sanskar",
     "description": "Sacred thread (Yagnopavita) Upanayana ceremony for spiritual rebirth, Brahmacharya, and Gayatri Deeksha.",
     "details": [
@@ -837,7 +837,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 99,
     "duration": "3.5 Hours",
     "panditsCount": "2 Pandits",
-    "imageUrl": "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": "/assets/navratri_puja.png",
     "badge": "Marriage Remedy",
     "description": "Mata Katyayani ritual for removing delay in marriage, finding compatible life partner, and resolving relationship obstacles.",
     "details": [
@@ -856,7 +856,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 99,
     "duration": "3.5 Hours",
     "panditsCount": "2 Pandits",
-    "imageUrl": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": "/assets/kaalsarp_dosh.png",
     "badge": "Manglik Remedy",
     "description": "Specialized Bhat Puja and Mangal Grah Havan to pacify Mars (Mangal Dosh) in natal chart for peaceful marriage.",
     "details": [
@@ -875,7 +875,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 79,
     "duration": "3 Hours",
     "panditsCount": "2 Pandits",
-    "imageUrl": "https://images.unsplash.com/photo-1532274402911-5a369e4c4bb5?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": "/assets/navgrah_shanti.png",
     "badge": "Birth Nakshatra",
     "description": "Remedial ritual for babies born under 6 Gand Mool Nakshatras (Ashlesha, Magha, Jyeshtha, Moola, Revati, Ashwini).",
     "details": [
@@ -894,7 +894,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 69,
     "duration": "3 Hours",
     "panditsCount": "1 Pandit",
-    "imageUrl": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": "/assets/navgrah_shanti.png",
     "badge": "Saturn Remedy",
     "description": "Lord Shani Deva ritual to alleviate severe effects of Shani Sade Sati, Dhaiya, and Mahadasha.",
     "details": [
@@ -913,7 +913,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 99,
     "duration": "3.5 Hours",
     "panditsCount": "2 Pandits",
-    "imageUrl": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": "/assets/kaalsarp_dosh.png",
     "badge": "Planetary",
     "description": "Pacification ritual for Rahu and Ketu shadow planets to stop sudden losses, anxiety, and confusion.",
     "details": [
@@ -932,7 +932,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 49,
     "duration": "3 Hours",
     "panditsCount": "1 Pandit",
-    "imageUrl": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": "/assets/sundarkand_path.png",
     "badge": "108 Path",
     "description": "108 continuous recitations of Sri Hanuman Chalisa with Chola offering and Havan for victory and fearlessness.",
     "details": [
@@ -951,7 +951,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 49,
     "duration": "2.5 Hours",
     "panditsCount": "1 Pandit",
-    "imageUrl": "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": "/assets/gayatri_jap.png",
     "badge": "Sun God",
     "description": "Veda Vyasa Agastya Aditya Hridaya Stotra ritual for high confidence, government job success, and eye health.",
     "details": [
@@ -970,7 +970,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 99,
     "duration": "3.5 Hours",
     "panditsCount": "2 Pandits",
-    "imageUrl": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": "/assets/baglamukhi_puja.png",
     "badge": "Sri Vidya",
     "description": "Divine Srividya worship of Divine Mother Lalita Tripurasundari with 1,000 names Kumkum Archana.",
     "details": [
@@ -989,7 +989,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 69,
     "duration": "3 Hours",
     "panditsCount": "1 Pandit",
-    "imageUrl": "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": "/assets/mahamrityunjay_jap.png",
     "badge": "Shiva",
     "description": "Chanting 1,000 holy names of Lord Shiva with lotus flowers and Bilva Patra for fulfillment of all wishes.",
     "details": [
@@ -1008,7 +1008,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 49,
     "duration": "2.5 Hours",
     "panditsCount": "1 Pandit",
-    "imageUrl": "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": "/assets/mahamrityunjay_jap.png",
     "badge": "Bi-Monthly",
     "description": "Auspicious Twilight (Pradosh Kaal) Shiva Worship to dissolve accumulated sins and bring mental calm.",
     "details": [
@@ -1027,7 +1027,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 99,
     "duration": "3.5 Hours",
     "panditsCount": "2 Pandits",
-    "imageUrl": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": "/assets/chandi_havan.png",
     "badge": "Protection",
     "description": "Lord Narsimha (half-man half-lion Vishnu avatar) fierce protection Havan to destroy enemies and severe danger.",
     "details": [
@@ -1046,7 +1046,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 69,
     "duration": "3 Hours",
     "panditsCount": "1 Pandit",
-    "imageUrl": "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": "/assets/ramcharitmanas.png",
     "badge": "Vrat Completion",
     "description": "Formal completion ceremony after observing 24 Ekadashi fasts for permanent Vishnu Lok liberation.",
     "details": [
@@ -1065,7 +1065,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 449,
     "duration": "8 Hours",
     "panditsCount": "5 Pandits",
-    "imageUrl": "https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": "/assets/chandi_havan.png",
     "badge": "Mahayagna",
     "description": "Grand joint Yagna combining Rudrabhishek Shiva energy and Chandi Havan Shakti for ultimate protection and prosperity.",
     "details": [
@@ -1084,7 +1084,7 @@ export const SERVICES: Service[] = [
     "priceUSD": 699,
     "duration": "2 Days",
     "panditsCount": "7 Pandits",
-    "imageUrl": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&q=80&w=800",
+    "imageUrl": "/assets/chandi_havan.png",
     "badge": "100-Path Yagna",
     "description": "Supreme 100 Durga Saptashati recitations Mahayagna by 7 learned Acharyas for royal status, empire growth, and triumph.",
     "details": [

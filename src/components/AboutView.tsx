@@ -2,7 +2,7 @@ import React from 'react';
 import { Sparkles } from 'lucide-react';
 import { LANGUAGE_PROFICIENCIES } from '../data';
 import { Language, t } from '../translations';
-import acharyaPhoto from '../assets/acharya_shlokam.jpg';
+import acharyaPhoto from '../assets/pandit_dheeraj_portrait.png';
 
 interface AboutViewProps {
   language: Language;
@@ -30,19 +30,19 @@ export default function AboutView({ language }: AboutViewProps) {
             {/* Quick stats badges */}
             <div className="grid grid-cols-3 gap-4 pt-4">
               <div className="bg-white dark:bg-[#141211] border border-[#e2bfb0]/20 dark:border-[#e2bfb0]/10 p-4 rounded-2xl flex flex-col items-center justify-center text-center shadow-sm">
-                <span className="font-serif text-xl md:text-2xl font-bold text-[#a04100]">3+</span>
+                <span className="font-serif text-xl md:text-2xl font-bold text-[#a04100]">10+</span>
                 <span className="text-[10px] uppercase font-bold text-[#5a4136]/60 dark:text-[#fbf9f8]/40 tracking-wider">
                   {t('about.stats.experience', language)}
                 </span>
               </div>
               <div className="bg-white border border-[#e2bfb0]/20 p-4 rounded-2xl flex flex-col items-center justify-center text-center shadow-sm">
-                <span className="font-serif text-xl md:text-2xl font-bold text-[#a04100]">300+</span>
+                <span className="font-serif text-xl md:text-2xl font-bold text-[#a04100]">1200+</span>
                 <span className="text-[10px] uppercase font-bold text-[#5a4136]/60 tracking-wider">
                   {t('about.stats.pujas', language)}
                 </span>
               </div>
               <div className="bg-white border border-[#e2bfb0]/20 p-4 rounded-2xl flex flex-col items-center justify-center text-center shadow-sm">
-                <span className="font-serif text-xl md:text-2xl font-bold text-[#a04100]">12</span>
+                <span className="font-serif text-xl md:text-2xl font-bold text-[#a04100]">25+</span>
                 <span className="text-[10px] uppercase font-bold text-[#5a4136]/60 tracking-wider">
                   {t('about.stats.temples', language)}
                 </span>
@@ -56,7 +56,7 @@ export default function AboutView({ language }: AboutViewProps) {
               <div className="absolute inset-0 bg-linear-to-t from-[#1b1c1c]/40 via-transparent to-transparent z-10"></div>
               <img 
                 src={acharyaPhoto} 
-                alt="Pandit Dheeraj Tripathi" 
+                alt="Pandit Dheeraj Tripathi - 10+ Years Vedic Scholar" 
                 loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -98,7 +98,6 @@ export default function AboutView({ language }: AboutViewProps) {
           </div>
         </div>
       </section>
-
     </div>
   );
 }

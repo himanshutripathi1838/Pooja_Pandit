@@ -630,4 +630,290 @@ export const UPCOMING_FESTIVALS = [
     icon: 'Sparkles',
     color: 'border-l-4 border-[#a04100]'
   }
+,
+{
+  "id": "chandihavan",
+  "name": "Chandi Havan",
+  "category": "Havan",
+  "price": 7000,
+  "priceUSD": 99,
+  "duration": "3 Hours",
+  "panditsCount": "2 Pandits",
+  "imageUrl": "/assets/chandi_havan.png",
+  "badge": "Protection",
+  "description": "Powerful Vedic Havan dedicated to Goddess Chandi for victory over negative forces, inner strength, and divine protection.",
+  "details": [
+    "Chandi Path and Durga Saptashati recitation",
+    "Sacred Agni Sthapana & Ahuti with pure herbal Samagri",
+    "Special Kavach recitation for house protection",
+    "Kanya Pujan & Grand Aarti",
+    "Sanctified Bhasma and Prasad distribution"
+  ]
+},
+{
+  "id": "mahamrityunjayjap",
+  "name": "Mahamrityunjay Jap",
+  "category": "Ceremony",
+  "price": 11000,
+  "priceUSD": 149,
+  "duration": "4 Hours",
+  "panditsCount": "2 Pandits",
+  "imageUrl": "/assets/mahamrityunjay_jap.png",
+  "badge": "Health",
+  "description": "Sacred chanting of the Maha Mrityunjaya Mantra for health rejuvenation, longevity, and divine Shiva blessings.",
+  "details": [
+    "Shiva Abhishek with holy water, milk, & Panchamrit",
+    "Recitation of 11,000 Maha Mrityunjaya Mantras",
+    "Rudraksha Mala Sanchar and Kavach path",
+    "Purnahuti Havan with special Ayurvedic herbs",
+    "Sanctified holy water & Bhasma distribution"
+  ]
+},
+{
+  "id": "navgrahshanti",
+  "name": "Navgrah Shanti Puja",
+  "category": "Astrology",
+  "price": 11000,
+  "priceUSD": 149,
+  "duration": "3.5 Hours",
+  "panditsCount": "2 Pandits",
+  "imageUrl": "/assets/navgrah_shanti.png",
+  "badge": "Astrology",
+  "description": "Planetary alignment ritual to pacify all nine planets (Navgrahas) and remove astrological malefic effects.",
+  "details": [
+    "Navgrah Mandala drawing with 9 colored grains",
+    "Planetary mantra chanting for all 9 planets",
+    "Navgrah Havan with planetary samidha woods",
+    "Astrological gemstone and charity advice",
+    "Peace and prosperity family blessings"
+  ]
+},
+{
+  "id": "kaalsarpdosh",
+  "name": "Kaal Sarp Dosh Puja",
+  "category": "Astrology",
+  "price": 11000,
+  "priceUSD": 149,
+  "duration": "4 Hours",
+  "panditsCount": "2 Pandits",
+  "imageUrl": "/assets/kaalsarp_dosh.png",
+  "badge": "Remedy",
+  "description": "Specialized Vedic ritual to neutralize Rahu-Ketu Kaal Sarp Dosh in horoscope for career & marriage peace.",
+  "details": [
+    "Rahu-Ketu Japa and Nag Devta Abhishek",
+    "Silver Snake Idol Pratishtha & Puja",
+    "Kaal Sarp Shanti Havan with Rahu-Ketu Samagri",
+    "River Water Visarjan rituals",
+    "Personalized astrological remedies by Pandit Ji"
+  ]
+},
+{
+  "id": "pitradosh",
+  "name": "Pitra Dosh Shanti Puja",
+  "category": "Ceremony",
+  "price": 11000,
+  "priceUSD": 149,
+  "duration": "3.5 Hours",
+  "panditsCount": "2 Pandits",
+  "imageUrl": "/assets/pitra_dosh.png",
+  "badge": "Ancestral",
+  "description": "Ancestral peace ritual to seek blessings of ancestors, remove lineage karma obstacles, and bring family progress.",
+  "details": [
+    "Pitra Gayatri Mantra chanting",
+    "Til & Kusha Tarpan ceremony",
+    "Pitra Dosh Nivaran Havan",
+    "Brahmin Bhojan & Clothes Donation recommendations",
+    "Family peace & lineage blessings"
+  ]
+},
+{
+  "id": "ramcharitmanas",
+  "name": "Musical Ramcharitmanas Path",
+  "category": "Ceremony",
+  "price": 25000,
+  "priceUSD": 349,
+  "duration": "24 Hours",
+  "panditsCount": "3 Pandits",
+  "imageUrl": "/assets/ramcharitmanas.png",
+  "badge": "Akhand Path",
+  "description": "Complete 24-hour Akhand recitation of Sri Ramcharitmanas with devotional musical instruments and Chaupais.",
+  "details": [
+    "Grand Ram Durbar Sthapana & Kalash Puja",
+    "Continuous 24-hour Akhand Chaupai Path",
+    "Traditional Harmonium & Dholak accompaniment",
+    "Maha Aarti and Hawan at completion",
+    "Large Prasad distribution for family & guests"
+  ]
+},
+{
+  "id": "sundarkandpath",
+  "name": "Sundarkand Path",
+  "category": "Ceremony",
+  "price": 11000,
+  "priceUSD": 149,
+  "duration": "3.5 Hours",
+  "panditsCount": "2 Pandits",
+  "imageUrl": "/assets/sundarkand_path.png",
+  "badge": "Devotional",
+  "description": "Melodious recitation of Lord Hanuman Sundarkand to bestow immense courage, eliminate fears, and solve crises.",
+  "details": [
+    "Hanuman Ji Sindoor & Chameli Oil Sringar",
+    "Sundarkand Chaupai Path with musical rhythm",
+    "Hanuman Chalisa & Bajrang Baan recitation",
+    "Special Bhog offering (Laddoo & Boondi)",
+    "Maruti Havan and Aarti"
+  ]
+},
+{
+  "id": "pinddaan",
+  "name": "Pind Daan Puja",
+  "category": "Ceremony",
+  "price": 11000,
+  "priceUSD": 149,
+  "duration": "3 Hours",
+  "panditsCount": "1 Pandit",
+  "imageUrl": "/assets/pind_daan.png",
+  "badge": "Moksha",
+  "description": "Holy oblation ceremony performed as per Shastras for ancestral peace and liberation of departed souls.",
+  "details": [
+    "Preparation of sacred rice & sesame Pindas",
+    "Vedic Mantra Tarpan at sacred water ghat",
+    "Vishnu Pad Puja & ancestral invocation",
+    "Liberation prayers (Moksha Daan)",
+    "Food and charity offering"
+  ]
+},
+{
+  "id": "warsikshradh",
+  "name": "Warsik Shradh",
+  "category": "Ceremony",
+  "price": 5100,
+  "priceUSD": 69,
+  "duration": "2.5 Hours",
+  "panditsCount": "1 Pandit",
+  "imageUrl": "/assets/warsik_shradh.png",
+  "badge": "Annual",
+  "description": "Annual ancestral remembrance ceremony performed with Tarpan, Brahmin Bhojan, and sacred Vedic mantras.",
+  "details": [
+    "Sankalp & Ancestral Remembrance",
+    "Til Tarpan with holy Ganga water",
+    "Rice Pinda Daan ceremony",
+    "Brahmin Bhojan ritual",
+    "Gau (Cow) and Bird food offering"
+  ]
+},
+{
+  "id": "baglamukhipuja",
+  "name": "Baglamukhi Mata Puja",
+  "category": "Online Puja",
+  "price": 2100,
+  "priceUSD": 29,
+  "duration": "2 Hours",
+  "panditsCount": "1 Pandit",
+  "imageUrl": "/assets/baglamukhi_puja.png",
+  "badge": "Victory",
+  "description": "Divine Tantrik Mahavidya ritual to overcome enemies, win legal matters, and secure complete protection.",
+  "details": [
+    "Yellow Pitambari Sthapana & Turmeric Pujas",
+    "Baglamukhi Stotra & Mantra Japa",
+    "Haldi & Yellow Mustard Havan",
+    "Protection Kavach initiation",
+    "Victory prayers for court & legal cases"
+  ]
+},
+{
+  "id": "mahamrityunjaypuja",
+  "name": "Mahamrityunjay Puja",
+  "category": "Ceremony",
+  "price": 10000,
+  "priceUSD": 139,
+  "duration": "3 Hours",
+  "panditsCount": "2 Pandits",
+  "imageUrl": "/assets/mahamrityunjay_jap.png",
+  "badge": "Shiva",
+  "description": "Comprehensive Shiva Puja and Rudrabhishek for chronic illness relief, peace, and longevity.",
+  "details": [
+    "Shivling Panchamrit Abhishek",
+    "108 Name Archana & Bilva Patra offering",
+    "Maha Mrityunjaya Japa",
+    "Rudra Havan",
+    "Divine Bhasma blessings"
+  ]
+},
+{
+  "id": "gayatrijap",
+  "name": "Gayatri Mantra Jap",
+  "category": "Ceremony",
+  "price": 5100,
+  "priceUSD": 69,
+  "duration": "3 Hours",
+  "panditsCount": "1 Pandit",
+  "imageUrl": "/assets/gayatri_jap.png",
+  "badge": "Wisdom",
+  "description": "Sacred Gayatri Mantra recitation for spiritual awakening, intellect enhancement, and mental clarity.",
+  "details": [
+    "Gayatri Yantra Pratishtha",
+    "24,000 Gayatri Mantra Japa",
+    "Sandhya Vandanam & Arghya",
+    "Gayatri Havan",
+    "Mind & body purification"
+  ]
+},
+{
+  "id": "navratripuja",
+  "name": "Navratri Puja & Havan",
+  "category": "Ceremony",
+  "price": 5100,
+  "priceUSD": 69,
+  "duration": "3.5 Hours",
+  "panditsCount": "1 Pandit",
+  "imageUrl": "/assets/navratri_puja.png",
+  "badge": "Durga",
+  "description": "Nine-day Durga Puja celebration, Kalash Sthapana, Durga Saptashati path, and Kanya Pujan.",
+  "details": [
+    "Ghat Sthapana & Kalash Puja",
+    "Durga Saptashati Adhyay recitation",
+    "Maha Navami Havan with Kamal Gatta",
+    "Kanya Pujan (9 young girls)",
+    "Divine Shakti Aarti"
+  ]
+},
+{
+  "id": "matadhumavati",
+  "name": "Mata Dhumavati Puja",
+  "category": "Ceremony",
+  "price": 2100,
+  "priceUSD": 29,
+  "duration": "2 Hours",
+  "panditsCount": "1 Pandit",
+  "imageUrl": "/assets/mata_dhumavati.png",
+  "badge": "Tantra",
+  "description": "Sacred Mahavidya ritual to alleviate deep poverty, overcome grief, and remove acute life obstacles.",
+  "details": [
+    "Dhumavati Yantra & Incense Puja",
+    "Rai & Black Til Havan",
+    "Obstacle removal Stotra Path",
+    "Protection Sankalp",
+    "Peace & clarity blessings"
+  ]
+},
+{
+  "id": "shreemadbhagwat",
+  "name": "Shreemad Bhagwat Path",
+  "category": "Ceremony",
+  "price": 21000,
+  "priceUSD": 299,
+  "duration": "7 Days",
+  "panditsCount": "2 Pandits",
+  "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuDjGEflm6WAoB3z3mtBZAuIuhDiv9geJ0a7QhjrUsYlWVZ9eLLbZXLMdogfy_33ue3UVppAJan2SEfkUZ20Ltz9CIJBvkZ8-goqZJQd7KL9ELcxv4IqDRsaLeSakVPStUeIY7bVoREZsG2WCv-l_XdvAaJipnxOrw2KLG-fIAVYTC4pDFdJJ8uUlB_MZYm1_r0z2ca32xoAy3lEDR2Bny_HP33FZMTs4WWhtA-ZT2QPwKj1cEI-YRv4aB4o9GjN1gXfdcnp_6F6Ujh5",
+  "badge": "Katha Saptah",
+  "description": "Seven-day (Saptah) divine narration of Shreemad Bhagwat Purana for spiritual liberation and family prosperity.",
+  "details": [
+    "7-Day Srimad Bhagwat Mahapuran Katha",
+    "Daily Krishna Leela & Raas Leela narration",
+    "Vishnu Sahasranama Stotram",
+    "Grand Purnahuti Havan on 7th day",
+    "Maha Prasadam for family"
+  ]
+}
 ];

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Menu, X, Globe, User, Sun, Moon } from 'lucide-react';
 import poojaPanditLogo from '../assets/images/pooja_pandit_logo_1783261742775.jpg';
 import { Language, LANGUAGES, t } from '../translations';
+import panditPortrait from '../assets/pandit_dheeraj_portrait.png';
 
 interface HeaderProps {
   activeTab: string;
@@ -30,36 +31,28 @@ export default function Header({ activeTab, setActiveTab, language, setLanguage,
         {/* Left logo */}
         <div className="flex items-center gap-4">
           <button 
-            onClick={() => setMobileMenuOpen(true)}
-            className="md:hidden text-[#a04100] hover:opacity-80 transition-all p-1"
-            aria-label="Toggle Menu"
-          >
-            <Menu className="w-6 h-6" />
-          </button>
-          
-          <a 
-            href="/" 
-            className="flex items-center gap-3 cursor-pointer" 
-            onClick={(e) => {
-              e.preventDefault();
-              setActiveTab('home');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
+            onClick={() => setActiveTab('home')} 
+            className="flex items-center gap-3 group text-left cursor-pointer focus:outline-hidden"
           >
             <img 
               src={poojaPanditLogo} 
               alt="Pooja Pandit Logo" 
-              className="h-10 w-10 object-cover rounded-lg border border-[#e2bfb0]/30 shadow-sm"
+              className="h-10 w-10 object-cover rounded-xl border border-[#e2bfb0]/30 group-hover:scale-105 transition-transform shadow-xs"
               referrerPolicy="no-referrer"
             />
-            <span className="text-[#a04100] font-bold text-lg md:text-xl tracking-wider uppercase flex items-center gap-1.5">
-              Pooja Pandit
-            </span>
-          </a>
+            <div>
+              <span className="font-bold text-lg text-[#a04100] tracking-wider uppercase block leading-none">
+                Pooja Pandit
+              </span>
+              <span className="text-[10px] text-[#5a4136]/70 uppercase tracking-widest font-semibold block mt-1">
+                Pandit Dheeraj Tripathi
+              </span>
+            </div>
+          </button>
         </div>
 
-        {/* Center Navigation (Desktop) */}
-        <nav className="hidden md:flex gap-8 items-center">
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => {
             const isActive = activeTab === item.id;
             return (
@@ -69,18 +62,14 @@ export default function Header({ activeTab, setActiveTab, language, setLanguage,
                 onClick={(e) => {
                   e.preventDefault();
                   setActiveTab(item.id);
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className={`relative font-medium text-[15px] transition-colors duration-300 py-2 cursor-pointer ${
+                className={`relative py-2 text-sm font-semibold transition-colors cursor-pointer ${
                   isActive 
                     ? 'text-[#a04100] dark:text-[#ff9d66] font-bold' 
                     : 'text-[#5a4136]/80 dark:text-[#fbf9f8]/80 hover:text-[#a04100] dark:hover:text-[#ff9d66]'
                 }`}
               >
                 {t(item.labelKey, language)}
-                {isActive && (
-                  <span className="absolute bottom-0 left-0 w-full h-[2.5px] bg-[#a04100] dark:bg-[#ff9d66] rounded-full" />
-                )}
               </a>
             );
           })}
@@ -88,8 +77,6 @@ export default function Header({ activeTab, setActiveTab, language, setLanguage,
 
         {/* Right tools */}
         <div className="flex items-center gap-4">
-          {/* Custom Language Dropdown Selector */}
-          
           {/* Theme switcher */}
           <button
             onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
@@ -99,6 +86,7 @@ export default function Header({ activeTab, setActiveTab, language, setLanguage,
             {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
           </button>
 
+          {/* Custom Language Dropdown Selector */}
           <div className="relative">
             <button
               onClick={() => setLangDropdownOpen(!langDropdownOpen)}
@@ -113,7 +101,7 @@ export default function Header({ activeTab, setActiveTab, language, setLanguage,
             {langDropdownOpen && (
               <>
                 <div className="fixed inset-0 z-10" onClick={() => setLangDropdownOpen(false)} />
-                <div className="absolute right-0 mt-2.5 w-40 bg-white/95 backdrop-blur-md border border-[#e2bfb0]/40 rounded-2xl shadow-xl overflow-hidden py-1.5 z-20 animate-in fade-in slide-in-from-top-2 duration-200">
+                <div className="absolute right-0 mt-2.5 w-40 bg-white/95 dark:bg-[#141211]/95 backdrop-blur-md border border-[#e2bfb0]/40 dark:border-[#e2bfb0]/15 rounded-2xl shadow-xl overflow-hidden py-1.5 z-20 animate-in fade-in slide-in-from-top-2 duration-200">
                   {LANGUAGES.map((lang) => (
                     <button
                       key={lang.code}
@@ -121,8 +109,8 @@ export default function Header({ activeTab, setActiveTab, language, setLanguage,
                         setLanguage(lang.code);
                         setLangDropdownOpen(false);
                       }}
-                      className={`w-full text-left px-4 py-2.5 text-xs font-medium transition-colors hover:bg-[#ffdbcc]/30 cursor-pointer ${
-                        language === lang.code ? 'text-[#a04100] font-bold bg-[#ffdbcc]/20' : 'text-[#5a4136]'
+                      className={`w-full text-left px-4 py-2.5 text-xs font-medium transition-colors hover:bg-[#ffdbcc]/30 dark:hover:bg-[#ffdbcc]/10 cursor-pointer ${
+                        language === lang.code ? 'text-[#a04100] dark:text-[#ff9d66] font-bold bg-[#ffdbcc]/20 dark:bg-[#ffdbcc]/5' : 'text-[#5a4136] dark:text-[#fbf9f8]/75'
                       }`}
                     >
                       {lang.label}
@@ -132,12 +120,25 @@ export default function Header({ activeTab, setActiveTab, language, setLanguage,
               </>
             )}
           </div>
+
+          {/* Mobile hamburger button */}
+          <button
+            onClick={() => setMobileMenuOpen(true)}
+            className="md:hidden p-2 text-[#5a4136] hover:text-[#a04100] cursor-pointer"
+            title="Open Menu"
+            aria-label="Open mobile menu"
+          >
+            <Menu className="w-6 h-6" />
+          </button>
         </div>
       </header>
 
-      {/* Slide-out Drawer for Mobile */}
+      {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-60 bg-black/40 backdrop-blur-sm transition-opacity" onClick={() => setMobileMenuOpen(false)}>
+        <div 
+          className="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex"
+          onClick={() => setMobileMenuOpen(false)}
+        >
           <div 
             className="fixed top-0 left-0 bottom-0 w-72 bg-[#fbf9f8] dark:bg-[#0c0b0a] shadow-2xl flex flex-col border-r border-[#e2bfb0]/20 dark:border-[#e2bfb0]/15 p-6"
             onClick={(e) => e.stopPropagation()}
@@ -168,7 +169,7 @@ export default function Header({ activeTab, setActiveTab, language, setLanguage,
             <div className="mb-4 p-4 bg-[#ffdbcc]/40 dark:bg-[#ffdbcc]/10 rounded-xl flex items-center gap-3">
               <div className="w-11 h-11 rounded-full overflow-hidden border border-[#a04100]/20">
                 <img 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuByFrlSzjQz__-hPuQ_861Ulk-bFND7ydx2Rk5o6qVuDDbSNG9K1yLGtP4MB_1op4HoXX7zHxKNzjSTWpDlHoG99_oj5EXenDJsHph3wHp76wWR0w4IDKYTTfk7lC0k1Dm2LUMYR_F7Ce59FoEq4wVX_mPexdIroYs4T3OXg_1o7g5ZHw6Uh1pDodEyVM8yIOTazMWSVMRcgmu-3x8CuQR1qYczPv6U6_wvXMuAJ0VMiYuMrisc6WNtLOULN-PAqiONOzxz2n85GfG5" 
+                  src={panditPortrait} 
                   alt="Pandit Portrait"
                   className="w-full h-full object-cover"
                 />

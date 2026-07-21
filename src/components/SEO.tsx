@@ -1,11 +1,6 @@
 import { useEffect } from 'react';
 import { Language } from '../translations';
 
-interface FAQItem {
-  question: string;
-  answer: string;
-}
-
 interface SEOProps {
   title: string;
   description: string;
@@ -15,19 +10,18 @@ interface SEOProps {
   ogType?: 'website' | 'article' | 'profile';
   language?: Language;
   pageNameForBreadcrumb?: string;
-  faqItems?: FAQItem[];
+  faqItems?: any[];
 }
 
 export default function SEO({
   title,
   description,
-  keywords = 'pandit ji, pooja booking, vedic rituals, astrologer varanasi, online puja booking, hindu festivals, pandit dheeraj tripathi',
+  keywords = 'pandit ji in hyderabad, pooja booking hyderabad, vedic pandit hyderabad, north indian pandit in hyderabad, telugu pandit hyderabad, griha pravesh pandit hyderabad, rudrabhishek in hyderabad, kaal sarp dosh puja hyderabad, chandi havan hyderabad, pujapandit.tech, pandit dheeraj tripathi hyderabad',
   canonicalPath = '',
   ogImage = 'https://pujapandit.tech/assets/images/pooja_pandit_logo_1783261742775.jpg',
   ogType = 'website',
   language = 'en',
-  pageNameForBreadcrumb,
-  faqItems
+  pageNameForBreadcrumb
 }: SEOProps) {
   
   useEffect(() => {
@@ -60,7 +54,7 @@ export default function SEO({
     setMetaTag('name', 'description', description);
     setMetaTag('name', 'keywords', keywords);
     setMetaTag('name', 'author', 'Pandit Dheeraj Tripathi');
-    setMetaTag('name', 'robots', 'index, follow');
+    setMetaTag('name', 'robots', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
 
     // 5. Open Graph Meta Tags
     setMetaTag('property', 'og:title', `${title} | Pandit Dheeraj Tripathi`, true);
@@ -68,7 +62,7 @@ export default function SEO({
     setMetaTag('property', 'og:image', ogImage, true);
     setMetaTag('property', 'og:url', fullCanonicalUrl, true);
     setMetaTag('property', 'og:type', ogType, true);
-    setMetaTag('property', 'og:site_name', 'Pandit Dheeraj Rites & Astrology', true);
+    setMetaTag('property', 'og:site_name', 'PoojaPandit.tech - Authentic Vedic Priests Online', true);
 
     // 6. Twitter Meta Tags
     setMetaTag('name', 'twitter:card', 'summary_large_image');
@@ -80,7 +74,7 @@ export default function SEO({
     const localBusinessSchema = {
       '@context': 'https://schema.org',
       '@type': 'ProfessionalService',
-      'name': 'Pandit Dheeraj Tripathi - Vedic Rites, Pujas & Astrology',
+      'name': 'Pooja Pandit - Certified Vedic Pandits in Hyderabad & Pan India',
       'image': ogImage,
       '@id': 'https://pujapandit.tech/#professional-service',
       'url': 'https://pujapandit.tech',
@@ -88,17 +82,36 @@ export default function SEO({
       'priceRange': '₹₹',
       'address': {
         '@type': 'PostalAddress',
-        'streetAddress': 'Varanasi Vedic Rites Center',
-        'addressLocality': 'Varanasi',
-        'addressRegion': 'Uttar Pradesh',
-        'postalCode': '221001',
+        'streetAddress': 'Hyderabad & Cyberabad Service Center / Varanasi Kashi HQ',
+        'addressLocality': 'Hyderabad',
+        'addressRegion': 'Telangana',
+        'postalCode': '500081',
         'addressCountry': 'IN'
       },
       'geo': {
         '@type': 'GeoCoordinates',
-        'latitude': 25.3176,
-        'longitude': 82.9739
+        'latitude': 17.385044,
+        'longitude': 78.486671
       },
+      'areaServed': [
+        'Hyderabad',
+        'Secunderabad',
+        'Cyberabad',
+        'Jubilee Hills',
+        'Banjara Hills',
+        'Gachibowli',
+        'Madhapur',
+        'Hitech City',
+        'Kondapur',
+        'Kukatpally',
+        'Begumpet',
+        'Telangana',
+        'Andhra Pradesh',
+        'Varanasi',
+        'Delhi NCR',
+        'Mumbai',
+        'Bangalore'
+      ],
       'openingHoursSpecification': {
         '@type': 'OpeningHoursSpecification',
         'dayOfWeek': [
@@ -128,59 +141,7 @@ export default function SEO({
     }
     businessScript.text = JSON.stringify(localBusinessSchema);
 
-    // 8. Organization Schema
-    const organizationSchema = {
-      '@context': 'https://schema.org',
-      '@type': 'Organization',
-      'name': 'PujaPandit.tech',
-      'url': 'https://pujapandit.tech',
-      'logo': 'https://pujapandit.tech/assets/images/pooja_pandit_logo_1783261742775.jpg',
-      'sameAs': [
-        'https://facebook.com/pujapandittech',
-        'https://instagram.com/pujapandittech'
-      ]
-    };
-
-    let orgScript = document.getElementById('json-ld-org') as HTMLScriptElement;
-    if (!orgScript) {
-      orgScript = document.createElement('script');
-      orgScript.id = 'json-ld-org';
-      orgScript.type = 'application/ld+json';
-      document.head.appendChild(orgScript);
-    }
-    orgScript.text = JSON.stringify(organizationSchema);
-
-    // 9. FAQPage Schema
-    if (faqItems && faqItems.length > 0) {
-      const faqSchema = {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        'mainEntity': faqItems.map(item => ({
-          '@type': 'Question',
-          'name': item.question,
-          'acceptedAnswer': {
-            '@type': 'Answer',
-            'text': item.answer
-          }
-        }))
-      };
-
-      let faqScript = document.getElementById('json-ld-faq') as HTMLScriptElement;
-      if (!faqScript) {
-        faqScript = document.createElement('script');
-        faqScript.id = 'json-ld-faq';
-        faqScript.type = 'application/ld+json';
-        document.head.appendChild(faqScript);
-      }
-      faqScript.text = JSON.stringify(faqSchema);
-    } else {
-      const existingFaq = document.getElementById('json-ld-faq');
-      if (existingFaq) {
-        existingFaq.remove();
-      }
-    }
-
-    // 10. Dynamic Breadcrumb Schema
+    // 8. Dynamic Breadcrumb Schema
     if (pageNameForBreadcrumb && canonicalPath && canonicalPath !== '/') {
       const breadcrumbSchema = {
         '@context': 'https://schema.org',
@@ -219,16 +180,13 @@ export default function SEO({
 
     // Cleanup functions when component unmounts
     return () => {
+      // Keep general tags but remove specific breadcrumb
       const existingBreadcrumb = document.getElementById('json-ld-breadcrumb');
       if (existingBreadcrumb) {
         existingBreadcrumb.remove();
       }
-      const existingFaq = document.getElementById('json-ld-faq');
-      if (existingFaq) {
-        existingFaq.remove();
-      }
     };
-  }, [title, description, keywords, canonicalPath, ogImage, ogType, language, pageNameForBreadcrumb, faqItems]);
+  }, [title, description, keywords, canonicalPath, ogImage, ogType, language, pageNameForBreadcrumb]);
 
   return null;
 }

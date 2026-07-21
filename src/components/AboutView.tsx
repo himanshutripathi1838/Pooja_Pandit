@@ -36,13 +36,13 @@ export default function AboutView({ language }: AboutViewProps) {
                 </span>
               </div>
               <div className="bg-white border border-[#e2bfb0]/20 p-4 rounded-2xl flex flex-col items-center justify-center text-center shadow-sm">
-                <span className="font-serif text-xl md:text-2xl font-bold text-[#a04100]">1200+</span>
+                <span className="font-serif text-xl md:text-2xl font-bold text-[#a04100]">12000+</span>
                 <span className="text-[10px] uppercase font-bold text-[#5a4136]/60 tracking-wider">
                   {t('about.stats.pujas', language)}
                 </span>
               </div>
               <div className="bg-white border border-[#e2bfb0]/20 p-4 rounded-2xl flex flex-col items-center justify-center text-center shadow-sm">
-                <span className="font-serif text-xl md:text-2xl font-bold text-[#a04100]">25+</span>
+                <span className="font-serif text-xl md:text-2xl font-bold text-[#a04100]">50+</span>
                 <span className="text-[10px] uppercase font-bold text-[#5a4136]/60 tracking-wider">
                   {t('about.stats.temples', language)}
                 </span>

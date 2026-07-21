@@ -26,8 +26,12 @@ export default function SEO({
 }: SEOProps) {
   
   useEffect(() => {
-    // 1. Title tag
-    document.title = `${title} | Pandit Dhirendra Shastri Ji`;
+    // 1. Title tag (Always start with Pooja Pandit so it is visible in browser tabs)
+    const formattedTitle = title.startsWith('Pooja Pandit') 
+      ? title 
+      : `Pooja Pandit | ${title}`;
+    
+    document.title = formattedTitle;
 
     // 2. Canonical Link Tag
     const fullCanonicalUrl = `https://pujapandit.tech${canonicalPath}`;
@@ -58,16 +62,16 @@ export default function SEO({
     setMetaTag('name', 'robots', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
 
     // 5. Open Graph Meta Tags
-    setMetaTag('property', 'og:title', `${title} | Pandit Dhirendra Shastri Ji`, true);
+    setMetaTag('property', 'og:title', formattedTitle, true);
     setMetaTag('property', 'og:description', description, true);
     setMetaTag('property', 'og:image', ogImage, true);
     setMetaTag('property', 'og:url', fullCanonicalUrl, true);
     setMetaTag('property', 'og:type', ogType, true);
-    setMetaTag('property', 'og:site_name', 'PoojaPandit.tech - Authentic Vedic Priests Online', true);
+    setMetaTag('property', 'og:site_name', 'Pooja Pandit - Authentic Vedic Priests Online', true);
 
     // 6. Twitter Meta Tags
     setMetaTag('name', 'twitter:card', 'summary_large_image');
-    setMetaTag('name', 'twitter:title', `${title} | Pandit Dhirendra Shastri Ji`);
+    setMetaTag('name', 'twitter:title', formattedTitle);
     setMetaTag('name', 'twitter:description', description);
     setMetaTag('name', 'twitter:image', ogImage);
 

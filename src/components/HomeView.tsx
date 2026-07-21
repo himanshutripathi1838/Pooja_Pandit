@@ -233,7 +233,7 @@ export default function HomeView({ language, onNavigateToServices, onNavigateToB
       <section className="bg-white border-y border-[#e2bfb0]/20 py-12">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 text-center">
           <div className="space-y-1">
-            <h3 className="font-serif text-3xl font-bold text-[#a04100]">1,000+</h3>
+            <h3 className="font-serif text-3xl font-bold text-[#a04100]">10,000+</h3>
             <p className="text-xs text-[#5a4136]/70 uppercase tracking-widest font-semibold">
               {t('stats.pujas', language)}
             </p>

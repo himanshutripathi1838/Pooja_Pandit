@@ -106,13 +106,13 @@ export const TRANSLATIONS: Record<string, Record<Language, any>> = {
   },
 
   'seo.title.home': {
-    en: 'Online Pooja Booking & Vedic Rituals | Pandit Dhirendra Shastri Ji',
-    hi: 'ऑनलाइन पूजा बुकिंग और वैदिक अनुष्ठान | पंडित धीरेंद्र शास्त्री जी',
-    sa: 'ऑनलाइन पूजा बुकिंग एवं वैदिक कर्मकाण्ड | पण्डित धीरेंद्र शास्त्री जी',
-    mr: 'ऑनलाइन पूजा बुकिंग आणि वैदिक विधी | पंडित धीरेंद्र शास्त्री जी',
-    gu: 'ઓનલાઇન પૂજા બુકિંગ અને વૈદિક વિધિ | પંડિત ધીરજ ત્રિપાઠી',
-    te: 'ఆన్‌లైన్ పూజా బుకింగ్ & వైదిక క్రతువులు | పండిట్ ధీరేంద్ర శాస్త్రి జీ',
-    ta: 'ஆன்லைன் பூஜை முன்பதிவு & வேத சடங்குகள் | பண்டித தீரஜ் திரிபாதி'
+    en: 'Pooja Pandit | Online Pooja Booking & Vedic Rituals',
+    hi: 'पूजा पंडित | ऑनलाइन पूजा बुकिंग और वैदिक अनुष्ठान',
+    sa: 'पूजा पंडित | ऑनलाइन पूजा बुकिंग एवं वैदिक कर्मकाण्ड',
+    mr: 'पूजा पंडित | ऑनलाइन पूजा बुकिंग आणि वैदिक विधी',
+    gu: 'પૂજા પંડિત | ઓનલાઇન પૂજા બુકિંગ અને વૈદિક વિધિ',
+    te: 'పూజా పండిట్ | ఆన్‌లైన్ పూజా బుకింగ్ & వైదిక క్రతువులు',
+    ta: 'பூஜா பண்டிட் | ஆன்லைன் பூஜை முன்பதிவு & வேத சடங்குகள்'
   },
   'seo.desc.home': {
     en: 'Book authentic Vedic rituals, havans, and astrology consultations online. Performed with absolute scriptural purity by Pandit Dhirendra Shastri Ji in Varanasi and globally.',

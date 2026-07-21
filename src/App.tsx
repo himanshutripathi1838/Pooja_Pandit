@@ -83,8 +83,22 @@ export default function App() {
     return INITIAL_BOOKINGS;
   });
   const [services, setServices] = useState<Service[]>(() => {
-    const stored = localStorage.getItem('pooja_services');
-    return stored ? JSON.parse(stored) : INITIAL_SERVICES;
+    try {
+      const stored = localStorage.getItem('pooja_services');
+      if (stored) {
+        const parsed: Service[] = JSON.parse(stored);
+        const merged = [...parsed];
+        INITIAL_SERVICES.forEach(initService => {
+          if (!merged.some(s => s.id === initService.id)) {
+            merged.push(initService);
+          }
+        });
+        return merged;
+      }
+      return INITIAL_SERVICES;
+    } catch (e) {
+      return INITIAL_SERVICES;
+    }
   });
   const [preselectedServiceId, setPreselectedServiceId] = useState<string | null>(null);
   const [preselectedDate, setPreselectedDate] = useState<string>('');

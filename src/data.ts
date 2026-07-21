@@ -560,6 +560,576 @@ export const SERVICES: Service[] = [
     "Grand Purnahuti Havan on 7th day",
     "Maha Prasadam for family"
   ]
+},
+{
+  "id": "dhanvantarihavan",
+  "name": "Dhanvantari Healing Havan",
+  "category": "Havan",
+  "price": 5100,
+  "priceUSD": 69,
+  "duration": "3 Hours",
+  "panditsCount": "1 Pandit",
+  "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuBXVp6nH85YURUHr5R27KRMSfhXPnAEMgBjG4cUs7f6LbIbVbIy3Ygh4yHXjlVbmKKrMz5eVgySE652yCwVV7DWo2Ba06dNezPDr6fN4Zp1KsPR4mHLd8MOSZILU3AUSBTCEmOoH9OxBJ526XzSJOd1prkUsEO0v9muepzfg4O9fNy72P1reZJjFu-IdEpk2uL4Bgaqrwu2uxwlBGAqzib5M2mY01LIFeXKTg81idVjG-PLoUYhFJn2Cnnc3TQkAHwvtztHkBY-Yh8h",
+  "badge": "Healing",
+  "description": "Specialized Vedic Havan dedicated to Lord Dhanvantari, divine physician of Devas, for relief from ailments and radiant health.",
+  "details": [
+    "Dhanvantari Mantra Japa & Stotra path",
+    "Aushadhi Havan with 108 Ayurvedic medicinal herbs",
+    "Holy Amruth Kalash Sthapana",
+    "Health Kavach recitation",
+    "Sanctified Bhasma & Prasad distribution"
+  ]
+},
+{
+  "id": "mahasudarshan",
+  "name": "Maha Sudarshan Havan",
+  "category": "Havan",
+  "price": 7500,
+  "priceUSD": 99,
+  "duration": "3.5 Hours",
+  "panditsCount": "2 Pandits",
+  "imageUrl": "/assets/chandi_havan.png",
+  "badge": "Sudarshan Chakra",
+  "description": "Supreme Vishnu Sudarshan Chakra Havan to dispel negative energies, evil eye, black magic, and chronic fears.",
+  "details": [
+    "Maha Sudarshan Chakra Yantra Pratishtha",
+    "Sudarshan Ashtakam & Mantra recitation",
+    "Sacred Ahuti with lotus seeds & Ghee",
+    "Protection Chakra installation for home & family",
+    "Purnahuti & Aarti"
+  ]
+},
+{
+  "id": "vishnusahasranama",
+  "name": "Vishnu Sahasranama Path & Havan",
+  "category": "Ceremony",
+  "price": 5100,
+  "priceUSD": 69,
+  "duration": "3 Hours",
+  "panditsCount": "1 Pandit",
+  "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuDjGEflm6WAoB3z3mtBZAuIuhDiv9geJ0a7QhjrUsYlWVZ9eLLbZXLMdogfy_33ue3UVppAJan2SEfkUZ20Ltz9CIJBvkZ8-goqZJQd7KL9ELcxv4IqDRsaLeSakVPStUeIY7bVoREZsG2WCv-l_XdvAaJipnxOrw2KLG-fIAVYTC4pDFdJJ8uUlB_MZYm1_r0z2ca32xoAy3lEDR2Bny_HP33FZMTs4WWhtA-ZT2QPwKj1cEI-YRv4aB4o9GjN1gXfdcnp_6F6Ujh5",
+  "badge": "1000 Names",
+  "description": "Recitation of 1,000 divine names of Lord Vishnu followed by Tulsi Havan for peace, harmony, and liberation.",
+  "details": [
+    "Lord Vishnu Sahasranama Stotram recitation",
+    "1,000 Tulsi Archana offering",
+    "Vishnu Havan with pure cow ghee",
+    "Family peace & prosperity prayers",
+    "Prasad distribution"
+  ]
+},
+{
+  "id": "kanakdharapuija",
+  "name": "Kanakdhara Stotra Puja & Havan",
+  "category": "Ceremony",
+  "price": 5100,
+  "priceUSD": 69,
+  "duration": "3 Hours",
+  "panditsCount": "1 Pandit",
+  "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuBXVp6nH85YURUHr5R27KRMSfhXPnAEMgBjG4cUs7f6LbIbVbIy3Ygh4yHXjlVbmKKrMz5eVgySE652yCwVV7DWo2Ba06dNezPDr6fN4Zp1KsPR4mHLd8MOSZILU3AUSBTCEmOoH9OxBJ526XzSJOd1prkUsEO0v9muepzfg4O9fNy72P1reZJjFu-IdEpk2uL4Bgaqrwu2uxwlBGAqzib5M2mY01LIFeXKTg81idVjG-PLoUYhFJn2Cnnc3TQkAHwvtztHkBY-Yh8h",
+  "badge": "Wealth Remedy",
+  "description": "Adi Shankaracharya Kanakdhara Stotra ritual for unexpected wealth flow, debt relief, and Lakshmi blessings.",
+  "details": [
+    "Kanakdhara Yantra Sthapana",
+    "108 Recitations of Kanakdhara Stotra",
+    "Golden Amla & Lotus flower offerings",
+    "Lakshmi Kuber Havan",
+    "Wealth & debt relief prayers"
+  ]
+},
+{
+  "id": "ashtalakshmipuja",
+  "name": "Ashta Lakshmi Puja & Havan",
+  "category": "Ceremony",
+  "price": 9500,
+  "priceUSD": 129,
+  "duration": "4 Hours",
+  "panditsCount": "2 Pandits",
+  "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuBXVp6nH85YURUHr5R27KRMSfhXPnAEMgBjG4cUs7f6LbIbVbIy3Ygh4yHXjlVbmKKrMz5eVgySE652yCwVV7DWo2Ba06dNezPDr6fN4Zp1KsPR4mHLd8MOSZILU3AUSBTCEmOoH9OxBJ526XzSJOd1prkUsEO0v9muepzfg4O9fNy72P1reZJjFu-IdEpk2uL4Bgaqrwu2uxwlBGAqzib5M2mY01LIFeXKTg81idVjG-PLoUYhFJn2Cnnc3TQkAHwvtztHkBY-Yh8h",
+  "badge": "8-Fold Prosperity",
+  "description": "Grand worship of eight forms of Goddess Lakshmi for wealth, courage, grain, progeny, knowledge, and victory.",
+  "details": [
+    "Installation of 8 Lakshmi altars",
+    "Sri Suktam & Ashta Lakshmi Stotram",
+    "Lotus flower & Makhana Archana",
+    "Ashta Lakshmi Mahayagna Havan",
+    "Prosperity blessings for home & business"
+  ]
+},
+{
+  "id": "bhumipujan",
+  "name": "Bhumi Pujan & Vastu Purush Shanti",
+  "category": "Ceremony",
+  "price": 7500,
+  "priceUSD": 99,
+  "duration": "3.5 Hours",
+  "panditsCount": "2 Pandits",
+  "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuDrkAGlE-nAAur7-fDC-2qsxAmndc6HuDs-ajv4xQyIxOu_Ubt9DgCAt4W71TQhBxS383e-_ylX2uiVZ1r0EPzpQSHklhMdH6BpHWWicKIvzkGo_TyqBx0Xa5kSeYDL2X23uwhYgl8Yq54cqCd8KnTndZrgsZnVVVwd5PpxSuVKkLRp-C50cZR7bTGOeVTkXkAeAR5He09M_T0KJYCFY5oMpnhQnI0jPWsmAvb6BRbVvPBD7vNlObIgLTzaQcOYLRm9IV-oE6jrA7I5",
+  "badge": "Land Sanctification",
+  "description": "Foundation stone laying ceremony for new plots, house construction, and commercial building Vastu Shanti.",
+  "details": [
+    "Northeast (Ishan) corner digging & Bhumi Devi Puja",
+    "Vastu Purush & Nag Devta Silver Idol Pratishtha",
+    "Panchiratna & Navratna burial ceremony",
+    "Vastu Shanti Havan",
+    "Construction safety & growth prayers"
+  ]
+},
+{
+  "id": "vahanpuja",
+  "name": "Vehicle (Vahan) & Shop Shanti Puja",
+  "category": "Online Puja",
+  "price": 2100,
+  "priceUSD": 29,
+  "duration": "1.5 Hours",
+  "panditsCount": "1 Pandit",
+  "imageUrl": "/assets/office_opening.png",
+  "badge": "Blessing",
+  "description": "Auspicious blessing ritual for new cars, commercial vehicles, and shops for accident protection and business growth.",
+  "details": [
+    "Ganesh Puja & Swastik Drawing with Kumkum",
+    "Lemon (Nimbu-Mirchi) protection ritual",
+    "Coconut cracking ceremony",
+    "Vahan Suraksha Mantra chanting",
+    "Aarti & Prashad"
+  ]
+},
+{
+  "id": "vidyarambha",
+  "name": "Vidyarambha & Saraswati Vandana",
+  "category": "Ceremony",
+  "price": 3500,
+  "priceUSD": 49,
+  "duration": "2 Hours",
+  "panditsCount": "1 Pandit",
+  "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuDjGEflm6WAoB3z3mtBZAuIuhDiv9geJ0a7QhjrUsYlWVZ9eLLbZXLMdogfy_33ue3UVppAJan2SEfkUZ20Ltz9CIJBvkZ8-goqZJQd7KL9ELcxv4IqDRsaLeSakVPStUeIY7bVoREZsG2WCv-l_XdvAaJipnxOrw2KLG-fIAVYTC4pDFdJJ8uUlB_MZYm1_r0z2ca32xoAy3lEDR2Bny_HP33FZMTs4WWhtA-ZT2QPwKj1cEI-YRv4aB4o9GjN1gXfdcnp_6F6Ujh5",
+  "badge": "Sanskar",
+  "description": "Sacred first learning initiation for young children (Aksharabhyasam) seeking Goddess Saraswati wisdom.",
+  "details": [
+    "Goddess Saraswati & Hayagriva Puja",
+    "Akshar Abhyas (writing Om on rice plate with golden ring)",
+    "Pen, slate & book sanctification",
+    "Medha Suktam recitation for memory",
+    "Prasad distribution"
+  ]
+},
+{
+  "id": "mundansanskar",
+  "name": "Mundan Sanskar Puja (Choolakarana)",
+  "category": "Ceremony",
+  "price": 5100,
+  "priceUSD": 69,
+  "duration": "2.5 Hours",
+  "panditsCount": "1 Pandit",
+  "imageUrl": "/assets/birthday_puja.png",
+  "badge": "Sanskar",
+  "description": "Traditional first haircut Sanskar for infants to cleanse past-life impurities and ensure health & longevity.",
+  "details": [
+    "Ganesh & Kula Devata Sthapana",
+    "Child Ayushya Havan for long life",
+    "Sacred hair shaving mantras",
+    "Curd & Gangajal head purification",
+    "Family blessings"
+  ]
+},
+{
+  "id": "janeusanskar",
+  "name": "Janeu Sanskar (Yagnopavit)",
+  "category": "Ceremony",
+  "price": 7500,
+  "priceUSD": 99,
+  "duration": "4 Hours",
+  "panditsCount": "2 Pandits",
+  "imageUrl": "/assets/gayatri_jap.png",
+  "badge": "Vedic Sanskar",
+  "description": "Sacred thread (Yagnopavita) Upanayana ceremony for spiritual rebirth, Brahmacharya, and Gayatri Deeksha.",
+  "details": [
+    "Ganesh, Matrika & Nandi Shradh Puja",
+    "Yagnopavita Dharana with Vedic Mantras",
+    "Gayatri Mantra Deeksha by Guru/Pandit Ji",
+    "Bhiksha Vandanam ceremony",
+    "Brahmachari Havan & blessing"
+  ]
+},
+{
+  "id": "anniversaryhavan",
+  "name": "Vivah Varshaganth (Anniversary) Havan",
+  "category": "Havan",
+  "price": 3500,
+  "priceUSD": 49,
+  "duration": "2 Hours",
+  "panditsCount": "1 Pandit",
+  "imageUrl": "/assets/marriage_ceremony.png",
+  "badge": "Couples",
+  "description": "Marriage anniversary blessing Havan dedicated to Shiva-Parvati for lifelong love, harmony, and togetherness.",
+  "details": [
+    "Uma-Maheshwara & Gauri-Shankar Puja",
+    "Garland exchange ritual for couples",
+    "Dampatya Suktam chanting",
+    "Agni Havan for marital harmony",
+    "Long life & prosperity blessings"
+  ]
+},
+{
+  "id": "katyayanipuja",
+  "name": "Katyayani Devi Puja (Vivah Dosh)",
+  "category": "Astrology",
+  "price": 7500,
+  "priceUSD": 99,
+  "duration": "3.5 Hours",
+  "panditsCount": "2 Pandits",
+  "imageUrl": "/assets/navratri_puja.png",
+  "badge": "Marriage Remedy",
+  "description": "Mata Katyayani ritual for removing delay in marriage, finding compatible life partner, and resolving relationship obstacles.",
+  "details": [
+    "Mata Katyayani Idol & Yantra Sthapana",
+    "Katyayani Mantra Japa (10,000 chants)",
+    "Red Chunri, Bangles & Shringar offering",
+    "Vivah Dosh Nivaran Havan",
+    "Blessed thread & Prasad"
+  ]
+},
+{
+  "id": "mangaldosh",
+  "name": "Mangal Dosh Shanti (Bhat Puja)",
+  "category": "Astrology",
+  "price": 7500,
+  "priceUSD": 99,
+  "duration": "3.5 Hours",
+  "panditsCount": "2 Pandits",
+  "imageUrl": "/assets/kaalsarp_dosh.png",
+  "badge": "Manglik Remedy",
+  "description": "Specialized Bhat Puja and Mangal Grah Havan to pacify Mars (Mangal Dosh) in natal chart for peaceful marriage.",
+  "details": [
+    "Mangal Devta & Bhat (Rice) Abhishek",
+    "Red Coral & Red Chandan Archana",
+    "10,000 Mangal Mantra Japa",
+    "Mangal Shanti Havan with Red Samidha",
+    "Personalized marital remedies"
+  ]
+},
+{
+  "id": "gandmoolshanti",
+  "name": "Gand Mool Nakshatra Shanti",
+  "category": "Astrology",
+  "price": 5500,
+  "priceUSD": 79,
+  "duration": "3 Hours",
+  "panditsCount": "2 Pandits",
+  "imageUrl": "/assets/navgrah_shanti.png",
+  "badge": "Birth Nakshatra",
+  "description": "Remedial ritual for babies born under 6 Gand Mool Nakshatras (Ashlesha, Magha, Jyeshtha, Moola, Revati, Ashwini).",
+  "details": [
+    "Abhishek with 27 well waters & 27 tree leaves",
+    "Nakshatra Lord Japa & Yantra Puja",
+    "Father-child shadow in Ghee bowl ritual",
+    "Mool Shanti Havan",
+    "Health & longevity blessings"
+  ]
+},
+{
+  "id": "shanishanti",
+  "name": "Shani Sade Sati & Dhaiya Shanti",
+  "category": "Astrology",
+  "price": 5100,
+  "priceUSD": 69,
+  "duration": "3 Hours",
+  "panditsCount": "1 Pandit",
+  "imageUrl": "/assets/navgrah_shanti.png",
+  "badge": "Saturn Remedy",
+  "description": "Lord Shani Deva ritual to alleviate severe effects of Shani Sade Sati, Dhaiya, and Mahadasha.",
+  "details": [
+    "Shani Deva Mustard Oil & Black Til Abhishek",
+    "Shani Chalisa & Shani Stotra path",
+    "11,000 Shani Beej Mantra Japa",
+    "Black Til & Iron Havan",
+    "Iron Ring & Til Donation guidance"
+  ]
+},
+{
+  "id": "rahuketuhavan",
+  "name": "Rahu Ketu Shanti Havan",
+  "category": "Astrology",
+  "price": 7500,
+  "priceUSD": 99,
+  "duration": "3.5 Hours",
+  "panditsCount": "2 Pandits",
+  "imageUrl": "/assets/kaalsarp_dosh.png",
+  "badge": "Planetary",
+  "description": "Pacification ritual for Rahu and Ketu shadow planets to stop sudden losses, anxiety, and confusion.",
+  "details": [
+    "Rahu & Ketu Yantra Sthapana",
+    "Dual Beej Mantra Recitation",
+    "Durva Grass & Kusha Havan",
+    "Urad & Sesame Donation ritual",
+    "Peace of mind & success prayers"
+  ]
+},
+{
+  "id": "santanagopal",
+  "name": "Santana Gopal Puja & Havan",
+  "category": "Astrology",
+  "price": 7500,
+  "priceUSD": 99,
+  "duration": "3.5 Hours",
+  "panditsCount": "2 Pandits",
+  "imageUrl": "/assets/birthday_puja.png",
+  "badge": "Progeny Blessing",
+  "description": "Sacred ritual dedicated to Lord Bal Gopal for childless couples seeking healthy, intelligent progeny.",
+  "details": [
+    "Laddu Gopal Sringar & Butter Bhog",
+    "Santana Gopal Stotra & 10,000 Mantra Japa",
+    "Peshwai & Makhana Ahuti Havan",
+    "Sanctified Kheer Prasad for couple",
+    "Parental blessings"
+  ]
+},
+{
+  "id": "hanumanchalisa108",
+  "name": "Hanuman Chalisa 108 Path & Havan",
+  "category": "Ceremony",
+  "price": 3500,
+  "priceUSD": 49,
+  "duration": "3 Hours",
+  "panditsCount": "1 Pandit",
+  "imageUrl": "/assets/sundarkand_path.png",
+  "badge": "108 Path",
+  "description": "108 continuous recitations of Sri Hanuman Chalisa with Chola offering and Havan for victory and fearlessness.",
+  "details": [
+    "Hanuman Ji Chola & Chameli Oil Sringar",
+    "108 Recitations of Hanuman Chalisa",
+    "Sankat Mochan Stotra chanting",
+    "Maruti Havan with Ghee & Boondi",
+    "Raksha Sutra binding"
+  ]
+},
+{
+  "id": "adityahridaya",
+  "name": "Aditya Hridaya Stotra & Surya Puja",
+  "category": "Ceremony",
+  "price": 3500,
+  "priceUSD": 49,
+  "duration": "2.5 Hours",
+  "panditsCount": "1 Pandit",
+  "imageUrl": "/assets/gayatri_jap.png",
+  "badge": "Sun God",
+  "description": "Veda Vyasa Agastya Aditya Hridaya Stotra ritual for high confidence, government job success, and eye health.",
+  "details": [
+    "Surya Dev Arghya with Copper Kalash & Red Flowers",
+    "Aditya Hridaya Stotra 12 Path",
+    "Surya Namaskar Mantras",
+    "Surya Havan with Red Sandalwood",
+    "Leadership & vitality blessings"
+  ]
+},
+{
+  "id": "lalitasahasranama",
+  "name": "Lalita Sahasranama Stotra & Havan",
+  "category": "Ceremony",
+  "price": 7500,
+  "priceUSD": 99,
+  "duration": "3.5 Hours",
+  "panditsCount": "2 Pandits",
+  "imageUrl": "/assets/baglamukhi_puja.png",
+  "badge": "Sri Vidya",
+  "description": "Divine Srividya worship of Divine Mother Lalita Tripurasundari with 1,000 names Kumkum Archana.",
+  "details": [
+    "Sri Yantra Pratishtha & Shodashopachara Puja",
+    "1,000 Names Kumkum Archana to Mother Lalita",
+    "Lalita Trishati Path",
+    "Sri Vidya Mahayagna Havan",
+    "Divine grace & beauty blessings"
+  ]
+},
+{
+  "id": "shivasahasranama",
+  "name": "Shiva Sahasranama Archana",
+  "category": "Ceremony",
+  "price": 5100,
+  "priceUSD": 69,
+  "duration": "3 Hours",
+  "panditsCount": "1 Pandit",
+  "imageUrl": "/assets/mahamrityunjay_jap.png",
+  "badge": "Shiva",
+  "description": "Chanting 1,000 holy names of Lord Shiva with lotus flowers and Bilva Patra for fulfillment of all wishes.",
+  "details": [
+    "Shivling Panchamrit Snan",
+    "1,000 Bilva Patra & Lotus Archana",
+    "Rudra Trishati recitation",
+    "Shiva Havan",
+    "Maha Prasadam"
+  ]
+},
+{
+  "id": "pradoshpuja",
+  "name": "Pradosh Vrat Puja & Rudrabhishek",
+  "category": "Ceremony",
+  "price": 3500,
+  "priceUSD": 49,
+  "duration": "2.5 Hours",
+  "panditsCount": "1 Pandit",
+  "imageUrl": "/assets/mahamrityunjay_jap.png",
+  "badge": "Bi-Monthly",
+  "description": "Auspicious Twilight (Pradosh Kaal) Shiva Worship to dissolve accumulated sins and bring mental calm.",
+  "details": [
+    "Pradosh Kaal Shodashopachara Shiva Puja",
+    "Gangajal & Milk Abhishek",
+    "108 Names Shiva Stotra",
+    "Dhoop-Deep Aarti",
+    "Prasad distribution"
+  ]
+},
+{
+  "id": "tulsivivah",
+  "name": "Tulsi Vivah Puja",
+  "category": "Ceremony",
+  "price": 3500,
+  "priceUSD": 49,
+  "duration": "2.5 Hours",
+  "panditsCount": "1 Pandit",
+  "imageUrl": "/assets/diwali_lakshmi_puja.png",
+  "badge": "Devotional",
+  "description": "Ceremonial marriage of Holy Tulsi plant with Lord Shaligram (Vishnu) marking the start of Hindu wedding season.",
+  "details": [
+    "Tulsi Vrindavan Sringar & Sugarcane Mandap",
+    "Shaligram Idol Abhishek & Vastra offering",
+    "Vivah Kanyadaan & Mangalashtakam recitation",
+    "Grand Aarti & Chappan Bhog",
+    "Family wedding prosperity"
+  ]
+},
+{
+  "id": "govardhanpuja",
+  "name": "Govardhan Puja & Annakut",
+  "category": "Ceremony",
+  "price": 5100,
+  "priceUSD": 69,
+  "duration": "3 Hours",
+  "panditsCount": "1 Pandit",
+  "imageUrl": "/assets/diwali_lakshmi_puja.png",
+  "badge": "Post-Diwali",
+  "description": "Post-Diwali Krishna Govardhan Giriraj worship with 56 Bhog Annakut offerings for agricultural & business wealth.",
+  "details": [
+    "Govardhan Hill Cowdung Sthapana",
+    "Krishna Giriraj Shodashopachara Puja",
+    "56 Bhog (Annakut) presentation",
+    "Gau Seva Mantra recitation",
+    "Annakut Prasadam"
+  ]
+},
+{
+  "id": "chhathpuja",
+  "name": "Chhath Puja Anushthan",
+  "category": "Ceremony",
+  "price": 5100,
+  "priceUSD": 69,
+  "duration": "3.5 Hours",
+  "panditsCount": "1 Pandit",
+  "imageUrl": "/assets/gayatri_jap.png",
+  "badge": "Sun & Chhathi Maiyya",
+  "description": "Sacred Bihari & UP Chhath Mahaparv ritual with Arghya to setting & rising Sun God for family longevity.",
+  "details": [
+    "Bamboo Soop & Daura Sthapana with fruits",
+    "Kharna & Sandhya Arghya Puja",
+    "Usha Arghya at Sunrise",
+    "Chhathi Maiyya Stotra recitation",
+    "Thekua Prasad & blessings"
+  ]
+},
+{
+  "id": "narsimhajayanti",
+  "name": "Narsimha Jayanti Puja & Havan",
+  "category": "Havan",
+  "price": 7500,
+  "priceUSD": 99,
+  "duration": "3.5 Hours",
+  "panditsCount": "2 Pandits",
+  "imageUrl": "/assets/chandi_havan.png",
+  "badge": "Protection",
+  "description": "Lord Narsimha (half-man half-lion Vishnu avatar) fierce protection Havan to destroy enemies and severe danger.",
+  "details": [
+    "Lord Narsimha Kavach & Stotra Japa",
+    "Narsimha Beej Mantra Havan",
+    "Panakam (Jaggery water) Bhog offering",
+    "Protection Chakra invocation",
+    "Victory & safety prayers"
+  ]
+},
+{
+  "id": "ekadashiudyapan",
+  "name": "Ekadashi Vrat Udyapan",
+  "category": "Ceremony",
+  "price": 5100,
+  "priceUSD": 69,
+  "duration": "3 Hours",
+  "panditsCount": "1 Pandit",
+  "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuDjGEflm6WAoB3z3mtBZAuIuhDiv9geJ0a7QhjrUsYlWVZ9eLLbZXLMdogfy_33ue3UVppAJan2SEfkUZ20Ltz9CIJBvkZ8-goqZJQd7KL9ELcxv4IqDRsaLeSakVPStUeIY7bVoREZsG2WCv-l_XdvAaJipnxOrw2KLG-fIAVYTC4pDFdJJ8uUlB_MZYm1_r0z2ca32xoAy3lEDR2Bny_HP33FZMTs4WWhtA-ZT2QPwKj1cEI-YRv4aB4o9GjN1gXfdcnp_6F6Ujh5",
+  "badge": "Vrat Completion",
+  "description": "Formal completion ceremony after observing 24 Ekadashi fasts for permanent Vishnu Lok liberation.",
+  "details": [
+    "Vishnu Mandap & 24 Kalash Sthapana",
+    "Ekadashi Mahatmya Path",
+    "Vishnu-Lakshmi Havan",
+    "Brahmin Bhojan & Vessel donation",
+    "Moksha blessings"
+  ]
+},
+{
+  "id": "gauseva",
+  "name": "Gau Seva & Gau Puja",
+  "category": "Online Puja",
+  "price": 2100,
+  "priceUSD": 29,
+  "duration": "1.5 Hours",
+  "panditsCount": "1 Pandit",
+  "imageUrl": "/assets/office_opening.png",
+  "badge": "Sacred Cow",
+  "description": "Sacred worship and green fodder (Gras Daan) feeding to Kamadhenu Cow in gaushala for erasing all sin karma.",
+  "details": [
+    "Gau Mata Tilak & Marigold Garland Sringar",
+    "33 Crore Devas Invocation in Gau Mata",
+    "Green Fodder, Jaggery & Roti feeding",
+    "Gau Pradakshina ceremony",
+    "Universal blessing"
+  ]
+},
+{
+  "id": "rudrachandiyagna",
+  "name": "Rudra Chandi Mahayagna",
+  "category": "Havan",
+  "price": 31000,
+  "priceUSD": 449,
+  "duration": "8 Hours",
+  "panditsCount": "5 Pandits",
+  "imageUrl": "/assets/chandi_havan.png",
+  "badge": "Mahayagna",
+  "description": "Grand joint Yagna combining Rudrabhishek Shiva energy and Chandi Havan Shakti for ultimate protection and prosperity.",
+  "details": [
+    "5 Acharyas performing dual Rudra & Chandi Mandap",
+    "Rudra Prashna & Durga Saptashati Path",
+    "1,008 Sacred Ahutis with Ghee & Herbs",
+    "Grand Purnahuti & Dhwajarohan",
+    "Maha Prasadam distribution"
+  ]
+},
+{
+  "id": "shatchandiyagna",
+  "name": "Shat Chandi Mahayagna (100 Paths)",
+  "category": "Havan",
+  "price": 51000,
+  "priceUSD": 699,
+  "duration": "2 Days",
+  "panditsCount": "7 Pandits",
+  "imageUrl": "/assets/chandi_havan.png",
+  "badge": "100-Path Yagna",
+  "description": "Supreme 100 Durga Saptashati recitations Mahayagna by 7 learned Acharyas for royal status, empire growth, and triumph.",
+  "details": [
+    "7 Learned Varanasi Acharyas for 2 days",
+    "100 Complete Recitations of Durga Saptashati",
+    "10,000 Havan Ahutis with Kamal Gatta & Herbs",
+    "Kanya Pujan of 9 Goddesses & Batuk Pujan",
+    "Grand Purnahuti & World Peace Prayers"
+  ]
 }
 ];
 

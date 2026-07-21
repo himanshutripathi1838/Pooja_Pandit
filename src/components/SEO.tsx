@@ -16,12 +16,13 @@ interface SEOProps {
 export default function SEO({
   title,
   description,
-  keywords = 'pandit ji in hyderabad, pooja booking hyderabad, vedic pandit hyderabad, north indian pandit in hyderabad, telugu pandit hyderabad, griha pravesh pandit hyderabad, rudrabhishek in hyderabad, kaal sarp dosh puja hyderabad, chandi havan hyderabad, pujapandit.tech, pandit pandit dhirendra shastri ji hyderabad',
+  keywords = 'pandit ji in hyderabad, pooja booking hyderabad, vedic pandit hyderabad, north indian pandit in hyderabad, telugu pandit hyderabad, griha pravesh pandit hyderabad, rudrabhishek in hyderabad, kaal sarp dosh puja hyderabad, chandi havan hyderabad, shat chandi mahayagna, mangal dosh bhat puja hyderabad, shani sade sati shanti, katyayani puja, mundan sanskar, janeu sanskar, pujapandit.tech, pandit dhirendra shastri ji',
   canonicalPath = '',
   ogImage = 'https://pujapandit.tech/assets/images/pooja_pandit_logo_1783261742775.jpg',
   ogType = 'website',
   language = 'en',
-  pageNameForBreadcrumb
+  pageNameForBreadcrumb,
+  faqItems
 }: SEOProps) {
   
   useEffect(() => {

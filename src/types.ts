@@ -57,7 +57,7 @@ export interface UpcomingFestival {
 export interface Booking {
   id: string;
   customerName: string;
-  customerEmail: string;
+  customerEmail?: string;
   customerPhone: string;
   serviceName: string;
   price: number;

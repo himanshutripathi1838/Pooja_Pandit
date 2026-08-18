@@ -178,8 +178,6 @@ export default function BookNowView({
       if (!fullName.trim()) newErrors.fullName = language === 'sa' ? 'पूर्ण नामं आवश्यकम्' : 'Full Name is required';
       if (!phone.trim()) newErrors.phone = language === 'sa' ? 'दूरभाष सङ्ख्या आवश्यकी' : 'Phone number is required';
       else if (!/^\+?[\d\s-]{10,15}$/.test(phone)) newErrors.phone = language === 'sa' ? 'अमान्य दूरभाष सङ्ख्या' : 'Please enter a valid phone number';
-      if (!email.trim()) newErrors.email = language === 'sa' ? 'ईमेल आवश्यकम्' : 'Email address is required';
-      else if (!/\S+@\S+\.\S+/.test(email)) newErrors.email = language === 'sa' ? 'अमान्य ईमेल प्रारूपम्' : 'Invalid email format';
     } else if (currentStep === 2) {
       if (!street.trim()) newErrors.street = language === 'sa' ? 'मार्ग सङ्केतः आवश्यकम्' : 'Street address is required';
       if (!city.trim()) newErrors.city = language === 'sa' ? 'नगरं आवश्यकम्' : 'City is required';
@@ -224,7 +222,6 @@ export default function BookNowView({
     const newBooking: Booking = {
       id: generatedId,
       customerName: fullName,
-      customerEmail: email,
       customerPhone: phone,
       serviceName: activeService.name,
       price: activeService.price,
@@ -502,21 +499,6 @@ export default function BookNowView({
                       </div>
                       {errors.phone && <span className="text-[10px] text-[#a33b38] font-semibold">{errors.phone}</span>}
                     </div>
-                  </div>
-
-                  <div className="flex flex-col gap-1.5">
-                    <label className="text-[10px] uppercase tracking-wider font-bold text-[#5a4136]">{t('book.form.email', language)}</label>
-                    <div className="relative">
-                      <Mail className="absolute left-3.5 top-3.5 w-4 h-4 text-[#a04100]/40" />
-                      <input 
-                        type="email" 
-                        placeholder="devotee@example.com"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        className="w-full bg-transparent border-b border-[#e2bfb0]/60 py-3 pl-11 pr-4 text-xs text-[#1b1c1c] focus:outline-none focus:border-[#a04100] placeholder-[#5a4136]/30"
-                      />
-                    </div>
-                    {errors.email && <span className="text-[10px] text-[#a33b38] font-semibold">{errors.email}</span>}
                   </div>
                 </div>
 
@@ -1009,10 +991,6 @@ export default function BookNowView({
                   <div className="flex justify-between border-b border-[#e2bfb0]/10 pb-2">
                     <span className="text-[10px] uppercase font-bold text-[#5a4136]/60">Devotee Name</span>
                     <span className="text-xs text-[#1b1c1c]">{fullName}</span>
-                  </div>
-                  <div className="flex justify-between border-b border-[#e2bfb0]/10 pb-2">
-                    <span className="text-[10px] uppercase font-bold text-[#5a4136]/60">Email</span>
-                    <span className="text-xs text-[#1b1c1c]">{email}</span>
                   </div>
                   <div className="flex justify-between border-b border-[#e2bfb0]/10 pb-2">
                     <span className="text-[10px] uppercase font-bold text-[#5a4136]/60">Phone</span>

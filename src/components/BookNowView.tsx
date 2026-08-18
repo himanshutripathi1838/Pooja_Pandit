@@ -177,7 +177,7 @@ export default function BookNowView({
     if (currentStep === 1) {
       if (!fullName.trim()) newErrors.fullName = language === 'sa' ? 'पूर्ण नामं आवश्यकम्' : 'Full Name is required';
       if (!phone.trim()) newErrors.phone = language === 'sa' ? 'दूरभाष सङ्ख्या आवश्यकी' : 'Phone number is required';
-      else if (!/^\+?[\d\s-]{10,15}$/.test(phone)) newErrors.phone = language === 'sa' ? 'अमान्य दूरभाष सङ्ख्या' : 'Please enter a valid phone number';
+      else if (phone.length !== 10) newErrors.phone = language === 'sa' ? 'अमान्य दूरभाष सङ्ख्या (१० अङ्काः)' : 'Phone number must be exactly 10 digits';
     } else if (currentStep === 2) {
       if (!street.trim()) newErrors.street = language === 'sa' ? 'मार्ग सङ्केतः आवश्यकम्' : 'Street address is required';
       if (!city.trim()) newErrors.city = language === 'sa' ? 'नगरं आवश्यकम्' : 'City is required';
@@ -491,9 +491,15 @@ export default function BookNowView({
                         <Phone className="absolute left-3.5 top-3.5 w-4 h-4 text-[#a04100]/40" />
                         <input 
                           type="tel" 
-                          placeholder="e.g. +91 98765 43210"
+                          placeholder="e.g. 9876543210"
                           value={phone}
-                          onChange={(e) => setPhone(e.target.value)}
+                          onChange={(e) => {
+                            const val = e.target.value.replace(/\D/g, '');
+                            if (val.length <= 10) {
+                              setPhone(val);
+                            }
+                          }}
+                          maxLength={10}
                           className="w-full bg-transparent border-b border-[#e2bfb0]/60 py-3 pl-11 pr-4 text-xs text-[#1b1c1c] focus:outline-none focus:border-[#a04100] placeholder-[#5a4136]/30"
                         />
                       </div>

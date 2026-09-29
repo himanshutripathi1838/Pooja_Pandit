@@ -56,14 +56,14 @@ export default function AboutView({ language }: AboutViewProps) {
               <div className="overflow-hidden rounded-2xl bg-[#fdfbf7] dark:bg-[#0c0b0a] flex justify-center items-center">
                 <img 
                   src={acharyaPhoto} 
-                  alt="Pandit Dhirendra Shastri Ji - 10+ Years Vedic Scholar" 
+                  alt="Pandit Dheeraj Shastri Ji - 10+ Years Vedic Scholar" 
                   loading="lazy"
                   className="w-full h-auto max-h-[600px] object-contain group-hover:scale-102 transition-transform duration-500 mx-auto"
                 />
               </div>
               <div className="text-center pt-3 pb-1">
                 <p className="font-serif font-bold text-base text-[#a04100] dark:text-[#ff9d66]">
-                  {language === 'sa' ? 'पं. धीरेंद्र शास्त्री जी' : 'Pandit Dhirendra Shastri Ji'}
+                  {language === 'sa' ? 'पं. धीरज शास्त्री जी' : 'Pandit Dheeraj Shastri Ji'}
                 </p>
                 <p className="text-[11px] font-semibold text-[#5a4136]/75 dark:text-[#fbf9f8]/60 uppercase tracking-widest mt-0.5">
                   {language === 'sa' ? '10+ वर्षाणाम् वैदिक अनुभवः' : '10+ Years Experienced Vedic Pandit'}

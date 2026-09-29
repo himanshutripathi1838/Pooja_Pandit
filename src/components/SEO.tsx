@@ -16,7 +16,7 @@ interface SEOProps {
 export default function SEO({
   title,
   description,
-  keywords = 'pandit ji in hyderabad, pooja booking hyderabad, vedic pandit hyderabad, north indian pandit in hyderabad, telugu pandit hyderabad, griha pravesh pandit hyderabad, rudrabhishek in hyderabad, kaal sarp dosh puja hyderabad, chandi havan hyderabad, shat chandi mahayagna, mangal dosh bhat puja hyderabad, shani sade sati shanti, katyayani puja, mundan sanskar, janeu sanskar, pujapandit.tech, pandit dhirendra shastri ji',
+  keywords = 'pandit ji in hyderabad, pooja booking hyderabad, vedic pandit hyderabad, north indian pandit in hyderabad, telugu pandit hyderabad, griha pravesh pandit hyderabad, rudrabhishek in hyderabad, kaal sarp dosh puja hyderabad, chandi havan hyderabad, shat chandi mahayagna, mangal dosh bhat puja hyderabad, shani sade sati shanti, katyayani puja, mundan sanskar, janeu sanskar, pujapandit.tech, pandit dheeraj shastri ji',
   canonicalPath = '',
   ogImage = 'https://pujapandit.tech/assets/images/pooja_pandit_logo_1783261742775.jpg',
   ogType = 'website',
@@ -58,7 +58,7 @@ export default function SEO({
     // 4. Standard Metadata Tags
     setMetaTag('name', 'description', description);
     setMetaTag('name', 'keywords', keywords);
-    setMetaTag('name', 'author', 'Pandit Dhirendra Shastri Ji');
+    setMetaTag('name', 'author', 'Pandit Dheeraj Shastri Ji');
     setMetaTag('name', 'robots', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
 
     // 5. Open Graph Meta Tags

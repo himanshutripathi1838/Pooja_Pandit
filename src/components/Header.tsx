@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Menu, X, Globe, User, Sun, Moon } from 'lucide-react';
+import { Menu, X, Globe, User, Sun, Moon, Phone } from 'lucide-react';
 import poojaPanditLogo from '../assets/images/pooja_pandit_logo_1783261742775.jpg';
 import { Language, LANGUAGES, t } from '../translations';
 import panditPortrait from '../assets/pandit_dheeraj_portrait.png';
+import { trackPhoneClick } from '../utils/analytics';
 
 interface HeaderProps {
   activeTab: string;
@@ -76,7 +77,16 @@ export default function Header({ activeTab, setActiveTab, language, setLanguage,
         </nav>
 
         {/* Right tools */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
+          {/* Header Call Button */}
+          <a
+            href="tel:+917067704371"
+            onClick={() => trackPhoneClick('header_call_btn')}
+            className="hidden lg:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#a04100] hover:bg-[#853500] text-white text-xs font-bold transition-all shadow-xs"
+          >
+            <Phone className="w-3.5 h-3.5" />
+            <span>+91 7067704371</span>
+          </a>
           {/* Theme switcher */}
           <button
             onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}

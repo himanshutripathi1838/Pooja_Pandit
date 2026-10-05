@@ -12,7 +12,12 @@ const routes = [
   { path: 'blog', changefreq: 'weekly', priority: '0.8' },
   { path: 'contact', changefreq: 'monthly', priority: '0.8' },
   { path: 'privacy', changefreq: 'monthly', priority: '0.5' },
-  { path: 'terms', changefreq: 'monthly', priority: '0.5' }
+  { path: 'terms', changefreq: 'monthly', priority: '0.5' },
+  { path: 'pandit-ji-hyderabad', changefreq: 'weekly', priority: '0.9' },
+  { path: 'griha-pravesh-puja-hyderabad', changefreq: 'weekly', priority: '0.9' },
+  { path: 'satyanarayan-puja-hyderabad', changefreq: 'weekly', priority: '0.9' },
+  { path: 'havan-pandit-hyderabad', changefreq: 'weekly', priority: '0.9' },
+  { path: 'north-indian-wedding-pandit-hyderabad', changefreq: 'weekly', priority: '0.9' }
 ];
 
 const today = new Date().toISOString().split('T')[0];

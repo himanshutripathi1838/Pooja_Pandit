@@ -11,6 +11,9 @@ import GalleryView from './components/GalleryView';
 import { Phone, Calendar } from 'lucide-react';
 import CalendarModal from './components/CalendarModal';
 
+import SeoLandingView from './components/SeoLandingView';
+import { trackPhoneClick, trackWhatsAppClick, trackGenerateLead } from './utils/analytics';
+
 import { SERVICES as INITIAL_SERVICES, INITIAL_BOOKINGS, FAQS } from './data';
 import { Booking, Service } from './types';
 import { Language, t } from './translations';
@@ -49,7 +52,7 @@ export default function App() {
     const queryPath = (searchParams.get('p') || '').toLowerCase();
     
     const resolveFromPath = (p: string) => {
-      const cleanPath = p.replace(/^\//, '');
+      const cleanPath = p.replace(/^\//, '').replace(/\/$/, '');
       if (cleanPath.startsWith('admin')) return 'admin';
       if (cleanPath.startsWith('services')) return 'services';
       if (cleanPath.startsWith('gallery')) return 'gallery';
@@ -60,6 +63,11 @@ export default function App() {
       if (cleanPath.startsWith('contact')) return 'contact';
       if (cleanPath.startsWith('privacy')) return 'privacy';
       if (cleanPath.startsWith('terms')) return 'terms';
+      if (cleanPath.startsWith('pandit-ji-hyderabad')) return 'seo-pandit-ji';
+      if (cleanPath.startsWith('griha-pravesh-puja-hyderabad')) return 'seo-griha-pravesh';
+      if (cleanPath.startsWith('satyanarayan-puja-hyderabad')) return 'seo-satyanarayan';
+      if (cleanPath.startsWith('havan-pandit-hyderabad')) return 'seo-havan';
+      if (cleanPath.startsWith('north-indian-wedding-pandit-hyderabad')) return 'seo-wedding';
       return null;
     };
 
@@ -146,7 +154,7 @@ export default function App() {
   // Sync state with back/forward browser buttons
   useEffect(() => {
     const handlePopState = () => {
-      const path = window.location.pathname.toLowerCase();
+      const path = window.location.pathname.toLowerCase().replace(/\/$/, '');
       if (path === '/' || path === '') {
         setActiveTab('home');
       } else if (path.startsWith('/admin')) {
@@ -169,6 +177,16 @@ export default function App() {
         setActiveTab('privacy');
       } else if (path.startsWith('/terms')) {
         setActiveTab('terms');
+      } else if (path.startsWith('/pandit-ji-hyderabad')) {
+        setActiveTab('seo-pandit-ji');
+      } else if (path.startsWith('/griha-pravesh-puja-hyderabad')) {
+        setActiveTab('seo-griha-pravesh');
+      } else if (path.startsWith('/satyanarayan-puja-hyderabad')) {
+        setActiveTab('seo-satyanarayan');
+      } else if (path.startsWith('/havan-pandit-hyderabad')) {
+        setActiveTab('seo-havan');
+      } else if (path.startsWith('/north-indian-wedding-pandit-hyderabad')) {
+        setActiveTab('seo-wedding');
       } else {
         setActiveTab('404');
       }
@@ -213,6 +231,7 @@ export default function App() {
   const handleBookingCreated = async (newBooking: Booking) => {
     const saved = await apiCreateBooking(newBooking);
     setBookings((prev) => [saved, ...prev]);
+    trackGenerateLead('booking_modal_created');
   };
 
   const handleUpdateBookingStatus = async (id: string, newStatus: 'Confirmed' | 'Pending' | 'Cancelled') => {
@@ -401,6 +420,22 @@ export default function App() {
           />
         )}
 
+        {activeTab === 'seo-pandit-ji' && (
+          <SeoLandingView pageType="pandit-ji" language={language} onNavigateToBook={handleNavigateToBook} />
+        )}
+        {activeTab === 'seo-griha-pravesh' && (
+          <SeoLandingView pageType="griha-pravesh" language={language} onNavigateToBook={handleNavigateToBook} />
+        )}
+        {activeTab === 'seo-satyanarayan' && (
+          <SeoLandingView pageType="satyanarayan" language={language} onNavigateToBook={handleNavigateToBook} />
+        )}
+        {activeTab === 'seo-havan' && (
+          <SeoLandingView pageType="havan" language={language} onNavigateToBook={handleNavigateToBook} />
+        )}
+        {activeTab === 'seo-wedding' && (
+          <SeoLandingView pageType="wedding" language={language} onNavigateToBook={handleNavigateToBook} />
+        )}
+
         {activeTab === '404' && (
           <div className="max-w-2xl mx-auto text-center py-20 px-6 space-y-6">
             <h1 className="font-serif text-6xl md:text-8xl font-bold text-[#a04100] animate-pulse">404</h1>
@@ -455,6 +490,7 @@ export default function App() {
           href="https://wa.me/917067704371?text=Namaste,%20I%20want%20to%20inquire%20about%20Pooja%20services." 
           target="_blank" 
           rel="noopener noreferrer"
+          onClick={() => trackWhatsAppClick('floating_button')}
           className="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-[#25D366]/30 hover:scale-110 transition-all duration-300 group cursor-pointer"
           title="WhatsApp Chat"
         >
@@ -466,6 +502,7 @@ export default function App() {
         {/* Call Button */}
         <a 
           href="tel:+917067704371"
+          onClick={() => trackPhoneClick('floating_button')}
           className="w-14 h-14 bg-gradient-to-br from-[#ff6b00] to-[#ff3b00] text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-[#ff3b00]/30 hover:scale-110 transition-all duration-300 group cursor-pointer"
           title="Direct Call"
         >

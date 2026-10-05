@@ -1145,24 +1145,44 @@ export const LANGUAGE_PROFICIENCIES: LanguageProficiency[] = [
 
 export const FAQS: FAQItem[] = [
   {
-    question: 'How do I book a Pandit Ji through Pooja Pandit?',
-    answer: 'You can select your desired Puja from our Services catalog, click "Book Now", choose your preferred date, location, and time slot, and confirm your booking. Our team will contact you within 30 minutes to confirm all Samagri details.',
+    question: 'Do you provide North Indian Pandit Ji services in Hyderabad?',
+    answer: 'Yes. Pandit Dheeraj Shastri provides North Indian Hindu puja and ceremony services in Hyderabad and selected nearby areas, subject to availability.',
+    category: 'General'
+  },
+  {
+    question: 'Can I book a Pandit Ji for puja at home in Hyderabad?',
+    answer: 'Yes, home visits can be arranged where available. Share your location, preferred date and puja type to check availability.',
     category: 'Booking'
   },
   {
-    question: 'Will Pandit Ji bring all the required Puja Samagri?',
-    answer: 'Yes! We offer options where Pandit Ji brings complete authentic Puja Samagri (holy wood, ghee, camphor, flowers, sweets, fruits, and vessels) or you can provide the Samagri yourself based on our checklist.',
+    question: 'Which pujas can I book a Pandit Ji for?',
+    answer: 'Services may include Griha Pravesh, Satyanarayan Puja, Havan, North Indian wedding rituals, Ganesh Puja, Lakshmi Puja, Vastu Puja, Navgraha Puja, Rudrabhishek, Naamkaran and Mundan, depending on the services offered.',
     category: 'Services'
   },
   {
-    question: 'Can I perform online / digital Pujas if I live abroad?',
-    answer: 'Absolutely. We conduct live interactive 4K video stream Pujas via Zoom/WhatsApp from holy shrines and ghats in Varanasi. Sankalpa is taken in your name and Gotra, and sanctified Prasad is dispatched to your international address.',
-    category: 'Online Puja'
+    question: 'Can I book a Griha Pravesh Pandit in Hyderabad?',
+    answer: 'Yes. Contact us to check availability based on your date and location.',
+    category: 'Services'
   },
   {
-    question: 'What languages does Pandit Ji speak during the ceremony?',
-    answer: 'Pandit Ji recites sacred mantras in authentic Sanskrit and provides explanations, kathas, and instructions in Hindi, English, Bhojpuri, Telugu, or your preferred language.',
+    question: 'Can I book Satyanarayan Puja at home?',
+    answer: 'Yes, where available. Call or WhatsApp with your preferred date and location.',
+    category: 'Services'
+  },
+  {
+    question: 'Do you provide North Indian wedding rituals in Hyderabad?',
+    answer: 'North Indian Hindu wedding rituals can be arranged where available. Contact us with your wedding date and location.',
+    category: 'Services'
+  },
+  {
+    question: 'Which areas near Hyderabad do you serve?',
+    answer: 'We serve Hyderabad and selected nearby areas including Secunderabad, Gachibowli, Kondapur, Madhapur, Kukatpally, Banjara Hills, Jubilee Hills, Manikonda, Miyapur, Uppal, LB Nagar and Shamshabad. Contact us with your exact location to confirm availability.',
     category: 'General'
+  },
+  {
+    question: 'How do I book Pandit Dheeraj Shastri?',
+    answer: 'Call or WhatsApp using the contact details on the website and share your puja type, date and location.',
+    category: 'Booking'
   }
 ];
 

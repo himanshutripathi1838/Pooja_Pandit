@@ -191,7 +191,7 @@ export default function HomeView({ language, onNavigateToServices, onNavigateToB
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-serif text-3xl md:text-5xl font-bold text-[#1b1c1c] leading-[1.15]"
           >
-            {t('hero.title.1', language)}
+            {t('hero.title.1', language)}{' '}
             <span className="text-[#a04100] italic">{t('hero.title.italic', language)}</span>
           </motion.h1>
 

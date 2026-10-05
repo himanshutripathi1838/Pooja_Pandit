@@ -520,9 +520,115 @@ export default function HomeView({ language, onNavigateToServices, onNavigateToB
           ))}
         </div>
       </section>
+      {/* 3. Pandit Profile Section */}
+      <section className="max-w-7xl mx-auto px-6 py-8">
+        <div className="bg-white dark:bg-[#141211] border border-[#e2bfb0]/30 rounded-3xl p-8 md:p-12 shadow-sm space-y-4">
+          <span className="text-xs font-bold text-[#a04100] tracking-wider uppercase block">
+            Vedic Acharya Profile
+          </span>
+          <h2 className="font-serif text-2xl md:text-4xl font-bold text-[#1b1c1c] dark:text-[#fbf9f8]">
+            Meet Pandit Dheeraj Shastri
+          </h2>
+          <p className="text-base text-[#5a4136] dark:text-[#fbf9f8]/80 leading-relaxed max-w-4xl">
+            Pandit Dheeraj Shastri provides traditional North Indian Hindu puja and religious ceremony services in Hyderabad and nearby areas. He specialises in North Indian puja rituals and can be booked for home pujas, Griha Pravesh, Satyanarayan Puja, Havan, wedding rituals and other ceremonies offered through the service.
+          </p>
+        </div>
+      </section>
 
+      {/* 5. Puja at Home Section */}
+      <section className="max-w-7xl mx-auto px-6 py-8">
+        <div className="bg-[#ffdbcc]/25 dark:bg-[#ffdbcc]/5 border border-[#e2bfb0]/35 rounded-3xl p-8 md:p-12 shadow-sm space-y-6">
+          <span className="text-xs font-bold text-[#a04100] tracking-wider uppercase block">
+            Home Visit Puja Services
+          </span>
+          <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#1b1c1c] dark:text-[#fbf9f8]">
+            Book a Pandit Ji for Puja at Home in Hyderabad
+          </h2>
+          <p className="text-base text-[#5a4136] dark:text-[#fbf9f8]/80 leading-relaxed max-w-3xl">
+            Looking for a Pandit Ji for a puja at home? Book Pandit Dheeraj Shastri for North Indian Hindu puja rituals in Hyderabad and selected nearby areas. Share your puja type, preferred date and location to check availability.
+          </p>
+          <div className="flex flex-wrap gap-4 pt-2">
+            <a 
+              href="tel:+917067704371"
+              className="inline-flex items-center gap-2 bg-[#a04100] hover:bg-[#a04100]/90 text-white font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-full transition-all shadow-md cursor-pointer"
+            >
+              <Phone className="w-4 h-4" />
+              CALL NOW TO CHECK AVAILABILITY
+            </a>
+          </div>
+        </div>
+      </section>
 
-      {/* Upcoming Festivals Section */}
+      {/* 6. Hyderabad Service Area Section */}
+      <section className="max-w-7xl mx-auto px-6 py-8">
+        <div className="bg-white dark:bg-[#141211] border border-[#e2bfb0]/30 rounded-3xl p-8 md:p-12 shadow-sm space-y-6">
+          <div className="flex items-center gap-2.5 text-[#a04100]">
+            <MapPin className="w-6 h-6" />
+            <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#1b1c1c] dark:text-[#fbf9f8]">
+              North Indian Pandit Ji Services in Hyderabad
+            </h2>
+          </div>
+          <p className="text-sm text-[#5a4136] dark:text-[#fbf9f8]/80 leading-relaxed max-w-4xl">
+            We provide North Indian Pandit Ji services in Hyderabad and selected nearby areas within approximately 50 km, depending on date, location and availability.
+          </p>
+          <div className="flex flex-wrap gap-2.5 pt-2">
+            {['Secunderabad', 'Gachibowli', 'Kondapur', 'Madhapur', 'Kukatpally', 'Banjara Hills', 'Jubilee Hills', 'Manikonda', 'Miyapur', 'Uppal', 'LB Nagar', 'Shamshabad'].map((area, idx) => (
+              <span 
+                key={idx}
+                className="px-4 py-2 bg-[#fbf9f8] dark:bg-[#0c0b0a] border border-[#e2bfb0]/30 text-[#1b1c1c] dark:text-[#fbf9f8] font-medium text-xs rounded-full shadow-xs"
+              >
+                📍 {area}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 7. Why Choose Us Section */}
+      <section className="max-w-7xl mx-auto px-6 py-8">
+        <div className="space-y-8">
+          <div className="space-y-2">
+            <span className="text-xs font-bold text-[#a04100] tracking-wider uppercase block">
+              Our Key Strengths
+            </span>
+            <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#1b1c1c] dark:text-[#fbf9f8]">
+              Why Choose Pandit Dheeraj Shastri?
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white dark:bg-[#141211] border border-[#e2bfb0]/20 p-6 rounded-2xl space-y-2">
+              <h3 className="font-serif font-bold text-base text-[#a04100]">North Indian Ritual Expertise</h3>
+              <p className="text-xs text-[#5a4136] dark:text-[#fbf9f8]/75 leading-relaxed">
+                Specialised in traditional North Indian Hindu puja rituals and authentic Vedic mantra recitation.
+              </p>
+            </div>
+            <div className="bg-white dark:bg-[#141211] border border-[#e2bfb0]/20 p-6 rounded-2xl space-y-2">
+              <h3 className="font-serif font-bold text-base text-[#a04100]">Hyderabad Service</h3>
+              <p className="text-xs text-[#5a4136] dark:text-[#fbf9f8]/75 leading-relaxed">
+                Serving Hyderabad and selected nearby areas within 50 km radius.
+              </p>
+            </div>
+            <div className="bg-white dark:bg-[#141211] border border-[#e2bfb0]/20 p-6 rounded-2xl space-y-2">
+              <h3 className="font-serif font-bold text-base text-[#a04100]">Home Puja Availability</h3>
+              <p className="text-xs text-[#5a4136] dark:text-[#fbf9f8]/75 leading-relaxed">
+                Home visits available for all traditional family rituals and pujas.
+              </p>
+            </div>
+            <div className="bg-white dark:bg-[#141211] border border-[#e2bfb0]/20 p-6 rounded-2xl space-y-2">
+              <h3 className="font-serif font-bold text-base text-[#a04100]">Multiple Ceremony Options</h3>
+              <p className="text-xs text-[#5a4136] dark:text-[#fbf9f8]/75 leading-relaxed">
+                Griha Pravesh, Satyanarayan Puja, Havan, wedding rituals and other offered ceremonies.
+              </p>
+            </div>
+            <div className="bg-white dark:bg-[#141211] border border-[#e2bfb0]/20 p-6 rounded-2xl space-y-2 md:col-span-2 lg:col-span-2">
+              <h3 className="font-serif font-bold text-base text-[#a04100]">Easy & Direct Booking</h3>
+              <p className="text-xs text-[#5a4136] dark:text-[#fbf9f8]/75 leading-relaxed">
+                Call or WhatsApp directly to discuss the ceremony, preferred date, Samagri checklist, and exact location.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="py-20 bg-[#f6f3f2]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12 space-y-2">

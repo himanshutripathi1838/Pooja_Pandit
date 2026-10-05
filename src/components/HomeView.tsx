@@ -193,7 +193,6 @@ export default function HomeView({ language, onNavigateToServices, onNavigateToB
           >
             {t('hero.title.1', language)}
             <span className="text-[#a04100] italic">{t('hero.title.italic', language)}</span>
-            {t('hero.title.2', language)}
           </motion.h1>
 
           <motion.p 

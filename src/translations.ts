@@ -2318,23 +2318,23 @@ export function t(key: string, lang: Language): string {
   const normalizedKey = normalize(key);
   
   // Try exact lookup first for performance
-  if (TRANSLATIONS[key] && TRANSLATIONS[key][lang]) {
+  if (TRANSLATIONS[key] && TRANSLATIONS[key][lang] !== undefined) {
     return TRANSLATIONS[key][lang];
   }
   
   // Search normalized keys
   for (const k in TRANSLATIONS) {
     if (normalize(k) === normalizedKey) {
-      if (TRANSLATIONS[k][lang]) {
+      if (TRANSLATIONS[k][lang] !== undefined) {
         return TRANSLATIONS[k][lang];
       }
-      if (TRANSLATIONS[k]['en']) {
+      if (TRANSLATIONS[k]['en'] !== undefined) {
         return TRANSLATIONS[k]['en'];
       }
     }
   }
   
-  if (TRANSLATIONS[key] && TRANSLATIONS[key]['en']) {
+  if (TRANSLATIONS[key] && TRANSLATIONS[key]['en'] !== undefined) {
     return TRANSLATIONS[key]['en'];
   }
 

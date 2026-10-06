@@ -150,6 +150,14 @@
       ]
     }
     </script>
+    <script>
+      document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+      document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && (e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S')) { e.preventDefault(); }
+        if (e.key === 'F12') { e.preventDefault(); }
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && ['I','i','J','j','C','c'].indexOf(e.key) !== -1) { e.preventDefault(); }
+      });
+    </script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->

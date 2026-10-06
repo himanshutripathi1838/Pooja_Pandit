@@ -1,3 +1,13 @@
 @import "tailwindcss";
 
 @variant dark (&:where(.dark, .dark *));
+
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  content-visibility: auto;
+}

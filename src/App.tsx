@@ -43,36 +43,6 @@ export default function App() {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
-  // Disable right-click and shortcut keys (Ctrl+U, F12, Inspect)
-  useEffect(() => {
-    const handleContextMenu = (e: MouseEvent) => {
-      e.preventDefault();
-    };
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.ctrlKey || e.metaKey) && (e.key === 'u' || e.key === 'U')) {
-        e.preventDefault();
-      }
-      if (e.key === 'F12') {
-        e.preventDefault();
-      }
-      if ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'I', 'j', 'J', 'c', 'C'].includes(e.key)) {
-        e.preventDefault();
-      }
-      if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) {
-        e.preventDefault();
-      }
-    };
-
-    document.addEventListener('contextmenu', handleContextMenu);
-    document.addEventListener('keydown', handleKeyDown);
-
-    return () => {
-      document.removeEventListener('contextmenu', handleContextMenu);
-      document.removeEventListener('keydown', handleKeyDown);
-    };
-  }, []);
-
   // Initialize state based on current URL path
   const getInitialTab = () => {
     const path = window.location.pathname.toLowerCase();
